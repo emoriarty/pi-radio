@@ -1,7 +1,10 @@
 import os
 import requests
+from dotenv import load_dotenv
 from lxml import etree as ET
 from xml_parser import parse_dir
+
+load_dotenv()
 
 class Browser:
     HOST = os.getenv('YCAST_HOST')
@@ -34,13 +37,13 @@ class Browser:
         req = requests.get(self.lists_url)
         titles, urls, counts = parse_dir(req.text)
 
-        for n in range(len(stations_lists_urls)):
+        for n in range(len(urls)):
             type = titles[n].lower().replace(" ", "_")
-            print(type + ' (' + count[n] + '): ' +  urls[n])
+            print(type + ' (' + counts[n] + '): ' +  urls[n])
             self.lists[type] = {
                 "title": titles[n],
                 "url": urls[n],
-                "count": count[n]
+                "count": counts[n]
             }
 
         return self.lists
