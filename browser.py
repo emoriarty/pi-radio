@@ -1,9 +1,10 @@
+import os
 import requests
 from lxml import etree as ET
 from xml_parser import parse_dir
 
 class Browser:
-    HOST = 'http://localhost'
+    HOST = os.getenv('YCAST_HOST')
     PORT = 9876
     URL = HOST + ':' + str(PORT)
 
