@@ -1,10 +1,7 @@
 import os
 import requests
-from dotenv import load_dotenv
 from lxml import etree as ET
-from xml_parser import parse_dir, parse_station, parse_root
-
-load_dotenv()
+from .xml_parser import parse_dir, parse_station, parse_root
 
 
 class Browser:
@@ -29,21 +26,30 @@ class Browser:
         self.stations = {}
         self.__parse_dir(req.text)
 
-    def fetch(self, directory, cache = True):
+    def fetch(self, directory=None, cache=True):
+        if directory is None or len(directory) == 0:
+            return (list(self.__index().values()), [])
+
         if cache is True and directory in self.stations:
-            return (self.directories[directory], self.stations[directory])
+            return ([self.directories[directory]], self.stations[directory])
 
         req = requests.get(self.directories[directory]["url"])
         dirs = self.__parse_dir(req.text, directory)
         stations = self.__parse_station(req.text, directory)
-        return (dirs, stations)
+        return (list(dirs.values()), stations)
+
+    def __index(self):
+        # filter directories by dir == None
+        dirs = dict(
+            filter(lambda elem: elem[1].get('dir') is None,
+                   self.directories.items()))
+        return dirs
 
     def __parse_dir(self, doc, directory=None):
         titles, urls, counts = parse_dir(doc)
         dirs = {}
 
         for i in range(len(urls)):
-            print(titles[i] + ' (' + counts[i] + '): ' + urls[i])
             dirs[titles[i]] = {
                 "dir": directory,
                 "title": titles[i],
@@ -59,7 +65,6 @@ class Browser:
         stations = []
 
         for i in range(len(urls)):
-            print(names[i] + ' (' + urls[i] + '): ' + mimes[i])
             stations.append({
                 "dir": directory,
                 "name": names[i],
