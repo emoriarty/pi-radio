@@ -1,2 +1,4 @@
+from . import main as cli_main
+
 if __name__ == "__main__":
-    print('__main__')
+    cli_main()
