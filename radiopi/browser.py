@@ -20,30 +20,34 @@ class Browser:
         if len(index) == 0:
             raise Exception('Radio Browser did not return index endpoint')
 
-        self.index_url = index[0]
-        req = requests.get(self.index_url)
-        self.directories = {}
-        self.stations = {}
-        self.__parse_dir(req.text)
+        self.__directories = {None: {"url": index[0]}}
+        self.__stations = {}
+        self.fetch(cache=False)
 
     def fetch(self, directory=None, cache=True):
-        if directory is None or len(directory) == 0:
-            return (list(self.__index().values()), [])
+        if cache is True:
+            if directory is None:
+                return (list(self.directories.values()), [])
+            elif directory in self.__stations:
+                return ([self.__directories[directory]],
+                        self.__stations[directory])
 
-        if cache is True and directory in self.stations:
-            return ([self.directories[directory]], self.stations[directory])
-
-        req = requests.get(self.directories[directory]["url"])
+        req = requests.get(self.__directories[directory]["url"])
         dirs = self.__parse_dir(req.text, directory)
         stations = self.__parse_station(req.text, directory)
         return (list(dirs.values()), stations)
 
-    def __index(self):
+    @property
+    def directories(self):
         # filter directories by dir == None
-        dirs = dict(
-            filter(lambda elem: elem[1].get('dir') is None,
-                   self.directories.items()))
-        return dirs
+        return dict(
+            filter(
+                lambda elem: elem[1].get('dir') is None and elem[0] is
+                not None, self.__directories.items()))
+
+    @property
+    def stations(self):
+        return self.__stations
 
     def __parse_dir(self, doc, directory=None):
         titles, urls, counts = parse_dir(doc)
@@ -57,7 +61,7 @@ class Browser:
                 "count": counts[i]
             }
 
-        self.directories = {**self.directories, **dirs}
+        self.__directories = {**self.__directories, **dirs}
         return dirs
 
     def __parse_station(self, doc, directory):
@@ -74,5 +78,5 @@ class Browser:
                 "bandrate": bandrates[i],
             })
 
-        self.stations[directory] = stations
+        self.__stations[directory] = stations
         return stations

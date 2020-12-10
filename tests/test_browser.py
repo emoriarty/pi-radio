@@ -62,14 +62,54 @@ class TestBrowser(TestCase):
         self.assertEqual(directory_names,
                          ['Genres', 'Countries', 'Languages', 'Most Popular'])
 
+    @patch('requests.get', mock)
+    def test_fetch_caches_request(self):
+        def side_effect(*args):
+            if mock.call_count == 1:
+                return DEFAULT
+            return MockXmlResponse(ycast_browser)
+
+        mock.side_effect = side_effect
+
+        b = Browser()
+
+        b.fetch()
+        b.fetch()
+        b.fetch()
+        self.assertTrue(mock.call_count == 2)
+
+        mock.reset_mock(side_effect=side_effect)
+
         b.fetch('Genres')
-        self.assertTrue(len(b.directories) > 4)
+        b.fetch('Genres')
+        b.fetch('Genres')
+        self.assertTrue(mock.call_count == 1)
 
-        directories, stations = b.fetch()
+    @patch('requests.get', mock)
+    def test_fetch_no_cache(self):
+        def side_effect(*args):
+            if mock.call_count == 1:
+                return DEFAULT
+            return MockXmlResponse(ycast_browser)
 
-        directory_names = [x["title"] for x in directories]
-        self.assertEqual(directory_names,
-                         ['Genres', 'Countries', 'Languages', 'Most Popular'])
+        mock.side_effect = side_effect
+
+        b = Browser()
+
+        b.fetch(cache=False)
+        b.fetch(cache=False)
+        self.assertTrue(mock.call_count == 4)
+
+        def side_effect_2(*args):
+            return MockXmlResponse(ycast_genres)
+
+        mock.reset_mock(side_effect=side_effect_2)
+
+        b.fetch('Genres', cache=False)
+        b.fetch('Genres', cache=False)
+        b.fetch('Genres', cache=False)
+        self.assertTrue(mock.call_count == 3)
+
 
 if __name__ == '__main__':
     test_main()
