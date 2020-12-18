@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  ycast:
+    image: "netraams/ycast-docker:v18"
+    ports:
+      - "8010:80"
