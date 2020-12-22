@@ -5,9 +5,7 @@ from .xml_parser import parse_dir, parse_station, parse_root
 
 
 class Browser:
-    HOST = os.getenv('YCAST_HOST')
-    PORT = 9876
-    URL = HOST + ':' + str(PORT)
+    URL = os.getenv('YCAST_HOST')
 
     def __init__(self):
         self.parser = ET.XMLParser(ns_clean=True,
