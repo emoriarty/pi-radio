@@ -27,9 +27,10 @@ class Browser:
     def fetch(self, directory=None, cache=True):
         if cache is True:
             if directory is None:
-                return (list(self.directories.values()), [])
+                return (list(self.filter_directories_by('dir').values()), [])
             elif directory in self.__stations:
-                return ([self.__directories[directory]],
+                return (list(
+                    self.filter_directories_by('dir', directory).values()),
                         self.__stations[directory])
 
         req = requests.get(self.__directories[directory]["url"])
@@ -39,15 +40,19 @@ class Browser:
 
     @property
     def directories(self):
-        # filter directories by dir == None
         return dict(
-            filter(
-                lambda elem: elem[1].get('dir') is None and elem[0] is
-                not None, self.__directories.items()))
+            filter(lambda elem: elem[0] is not None,
+                   self.__directories.items()))
 
     @property
     def stations(self):
         return self.__stations
+
+    def filter_directories_by(self, prop, value=None):
+        return dict(
+            filter(
+                lambda elem: elem[1].get(prop) is value and elem[0] is
+                not None, self.__directories.items()))
 
     def __parse_dir(self, doc, directory=None):
         titles, urls, counts = parse_dir(doc)

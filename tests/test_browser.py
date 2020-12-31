@@ -110,6 +110,30 @@ class TestBrowser(TestCase):
         b.fetch('Genres', cache=False)
         self.assertTrue(mock.call_count == 3)
 
+    @patch('requests.get', mock)
+    def test_fetch_returns_consistent_data(self):
+
+        def side_effect(*args):
+            if mock.call_count == 1:
+                return DEFAULT
+            return MockXmlResponse(ycast_browser)
+
+        mock.side_effect = side_effect
+
+        b = Browser()
+
+        empty_fetch_1 = b.fetch()
+        empty_fetch_2 = b.fetch()
+        self.assertEqual(empty_fetch_1, empty_fetch_2)
+
+        def side_effect_2(*args):
+            return MockXmlResponse(ycast_genres)
+
+        mock.reset_mock(side_effect=side_effect_2)
+
+        dir_fetch_1 = b.fetch('Genres')
+        dir_fetch_2 = b.fetch('Genres')
+        self.assertEqual(dir_fetch_1, dir_fetch_2)
 
 if __name__ == '__main__':
     test_main()
