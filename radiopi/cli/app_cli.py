@@ -7,12 +7,15 @@ from prompt_toolkit.key_binding import KeyBindings
 from prompt_toolkit.key_binding.bindings.focus import focus_next, focus_previous
 from pyfiglet import Figlet
 import vlc
+import os
 from ..browser import Browser
 from .selector_control import SelectorControl
 from .window_manager import WindowManager
 from ..log import Log
 
 log = Log('cli.log').logging
+vlc_log = os.path.join(Log.log_folder(), 'vlc.log')
+
 
 class AppManager():
     def __init__(self):
@@ -34,7 +37,10 @@ class AppManager():
         self.app = Application(full_screen=True,
                                layout=self.wm.layout,
                                key_bindings=kb)
-        self.instance = vlc.Instance('--input-repeat=-1', '--fullscreen')
+        self.instance = vlc.Instance('--input-repeat=-1', '--fullscreen',
+                                     '--quiet', '--file-logging',
+                                     f'--logfile={vlc_log}', '--logmode=text',
+                                     '--log-verbose=3')
         self.player = self.instance.media_player_new()
 
     @staticmethod
@@ -78,7 +84,7 @@ class AppManager():
 
     def fetch_dirs(self, id):
         dirs = self.browser.fetch(id)[0]
-        
+
         if len(dirs) > 0:
             self.wm.dirs = (AppManager.format_dirs(dirs), self.on_click_dir,
                             'No folders')
@@ -91,13 +97,13 @@ class AppManager():
                             self.on_click_station, 'No stations')
 
     def play(self, _ev=None):
+        log.info('currently playing: %s', self.current_station)
         media = self.instance.media_new(self.current_station['url'])
         self.player.set_media(media)
         self.player.play()
 
     def stop(self, _ev=None):
         self.player.stop()
-
 
     def run(self):
         self.app.run()
