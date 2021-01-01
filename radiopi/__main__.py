@@ -1,4 +1,5 @@
-from . import main as cli_main
+from .cli import AppManager
 
 if __name__ == "__main__":
-    cli_main()
+    app = AppManager()
+    app.run()
