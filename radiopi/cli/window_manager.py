@@ -23,9 +23,29 @@ class WindowManager():
 
     def append_folder(self, *folder_tuple):
         self.folders.append(SelectorControl(*folder_tuple))
+        self._recreate_selectors()
+
+    def insert_folder(self, *folder_tuple):
+        self._recreate_folders()
+        self.append_folder(*folder_tuple)
 
     def show_stations(self, *station_tuple):
         self.stations.props = station_tuple
+        self._recreate_folders()
+        self._recreate_selectors()
+
+    def _recreate_selectors(self):
+        self.selectors = self.folders.copy()
+        if len(self.stations.values) > 0:
+            self.selectors.append(self.stations)
+
+    def _recreate_folders(self):
+        self.folders = self.folders[:self.index + 1]
+        
+
+    def _get_layout_folders(self):
+        return flatten(
+            map(lambda i: (HorizontalLine(), i.radio_list), self.folders))
 
     @property
     def count(self):
@@ -47,15 +67,11 @@ class WindowManager():
 
     @property
     def layout(self):
-        folders = flatten(
-            map(lambda i: (HorizontalLine(), i.radio_list), self.folders))
-        self.selectors = list(map(lambda i: i, self.folders)) + [self.stations]
-        log.debug(self.selectors)
         return Layout(
             VSplit([
                 HSplit([
                     WindowManager.header(),
-                ] + folders),
+                ] + self._get_layout_folders()),
                 VerticalLine(),
                 HSplit([
                     WindowManager.player(),
