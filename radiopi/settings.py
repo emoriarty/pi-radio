@@ -1,3 +1,10 @@
+import os
+from pathlib import Path
 from dotenv import load_dotenv as _load_dotenv, find_dotenv as _find_dotenv
 
 _load_dotenv(_find_dotenv())
+
+APP_FOLDER = 'radiopi'
+CONFIG_PATH = os.path.join(Path.home(), '.config', APP_FOLDER)
+# create config folder
+Path(CONFIG_PATH).mkdir(parents=True, exist_ok=True)
