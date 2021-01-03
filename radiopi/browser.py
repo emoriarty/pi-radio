@@ -1,7 +1,6 @@
 import os
 import requests
-from lxml import etree as ET
-from .xml_parser import parse_dir, parse_station, parse_root
+from .xml_parser import parse_dir, parse_station
 
 
 class Browser:
@@ -71,8 +70,8 @@ class Browser:
                 "name": names[i],
                 "url": urls[i],
                 "logo": logos[i],
-                "mime": mimes[i],
-                "bandrate": bandrates[i],
+                "mime": mimes[i] if len(mimes) > i else '',
+                "bandrate": bandrates[i] if len(bandrates) > i else '',
             })
 
         self.__stations[directory] = stations
