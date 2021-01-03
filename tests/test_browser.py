@@ -8,14 +8,18 @@ dirname = path.dirname(__file__)
 file_ycast_index = open(path.join(dirname, 'data', 'ycast_index.xml'), 'r')
 file_ycast_browser = open(path.join(dirname, 'data', 'ycast_browser.xml'), 'r')
 file_ycast_genres = open(path.join(dirname, 'data', 'ycast_genres.xml'), 'r')
+file_ycast_my_stations = open(
+    path.join(dirname, 'data', 'ycast_my_stations.xml'), 'r')
 
 ycast_index = file_ycast_index.read()
 ycast_browser = file_ycast_browser.read()
 ycast_genres = file_ycast_genres.read()
+ycast_my_stations = file_ycast_my_stations.read()
 
 file_ycast_index.close()
 file_ycast_browser.close()
 file_ycast_genres.close()
+file_ycast_my_stations.close()
 
 
 class MockXmlResponse():
@@ -40,9 +44,10 @@ class TestBrowser(TestCase):
         mock.side_effect = side_effect
 
         b = Browser()
+
         self.assertIs(type(b.directories), dict)
         self.assertEqual(list(b.directories.keys()),
-                         ['Genres', 'Countries', 'Languages', 'Most Popular'])
+                         ['Radiobrowser', 'My Stations'])
 
     @patch('requests.get', mock)
     def test_fetch_returns_root_directories_when_no_arguments(self):
@@ -59,8 +64,8 @@ class TestBrowser(TestCase):
         directories, stations = b.fetch()
 
         directory_names = [x["title"] for x in directories]
-        self.assertEqual(directory_names,
-                         ['Genres', 'Countries', 'Languages', 'Most Popular'])
+        self.assertEqual(directory_names, ['Radiobrowser', 'My Stations'])
+        self.assertEqual(stations, [])
 
     @patch('requests.get', mock)
     def test_fetch_caches_request(self):
@@ -76,21 +81,19 @@ class TestBrowser(TestCase):
         b.fetch()
         b.fetch()
         b.fetch()
-        self.assertTrue(mock.call_count == 2)
+        self.assertTrue(mock.call_count == 1)
 
         mock.reset_mock(side_effect=side_effect)
 
-        b.fetch('Genres')
-        b.fetch('Genres')
-        b.fetch('Genres')
+        b.fetch('Radiobrowser')
+        b.fetch('Radiobrowser')
+        b.fetch('Radiobrowser')
         self.assertTrue(mock.call_count == 1)
 
     @patch('requests.get', mock)
     def test_fetch_no_cache(self):
         def side_effect(*args):
-            if mock.call_count == 1:
-                return DEFAULT
-            return MockXmlResponse(ycast_browser)
+            return DEFAULT
 
         mock.side_effect = side_effect
 
@@ -98,21 +101,20 @@ class TestBrowser(TestCase):
 
         b.fetch(cache=False)
         b.fetch(cache=False)
-        self.assertTrue(mock.call_count == 4)
+        self.assertTrue(mock.call_count == 3)
 
         def side_effect_2(*args):
-            return MockXmlResponse(ycast_genres)
+            return MockXmlResponse(ycast_browser)
 
         mock.reset_mock(side_effect=side_effect_2)
 
-        b.fetch('Genres', cache=False)
-        b.fetch('Genres', cache=False)
-        b.fetch('Genres', cache=False)
+        b.fetch('Radiobrowser', cache=False)
+        b.fetch('Radiobrowser', cache=False)
+        b.fetch('Radiobrowser', cache=False)
         self.assertTrue(mock.call_count == 3)
 
     @patch('requests.get', mock)
     def test_fetch_returns_consistent_data(self):
-
         def side_effect(*args):
             if mock.call_count == 1:
                 return DEFAULT
@@ -131,9 +133,10 @@ class TestBrowser(TestCase):
 
         mock.reset_mock(side_effect=side_effect_2)
 
-        dir_fetch_1 = b.fetch('Genres')
-        dir_fetch_2 = b.fetch('Genres')
+        dir_fetch_1 = b.fetch('Radiobrowser')
+        dir_fetch_2 = b.fetch('Radiobrowser')
         self.assertEqual(dir_fetch_1, dir_fetch_2)
+
 
 if __name__ == '__main__':
     test_main()

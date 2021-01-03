@@ -1,1 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?><ListOfItems><ItemCount>1</ItemCount><Item><ItemType>Dir</ItemType><Title>Radiobrowser</Title><UrlDir>http://192.168.1.39:9876/ycast/radiobrowser/?vtuner=true</UrlDir><UrlDirBackUp>http://192.168.1.39:9876/ycast/radiobrowser/?vtuner=true</UrlDirBackUp><DirCount>4</DirCount></Item><Item><ItemType>Display</ItemType><Display>'My Stations' feature not configured.</Display></Item></ListOfItems>
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<ListOfItems>
+	<ItemCount>-1</ItemCount>
+	<Item>
+		<ItemType>Dir</ItemType>
+		<Title>Radiobrowser</Title>
+		<UrlDir>http://localhost:8010/ycast/radiobrowser/?vtuner=true</UrlDir>
+		<UrlDirBackUp>http://localhost:8010/ycast/radiobrowser/?vtuner=true</UrlDirBackUp>
+		<DirCount>4</DirCount>
+	</Item>
+	<Item>
+		<ItemType>Dir</ItemType>
+		<Title>My Stations</Title>
+		<UrlDir>http://localhost:8010/ycast/my_stations/?vtuner=true</UrlDir>
+		<UrlDirBackUp>http://localhost:8010/ycast/my_stations/?vtuner=true</UrlDirBackUp>
+		<DirCount>1</DirCount>
+	</Item>
+</ListOfItems>
