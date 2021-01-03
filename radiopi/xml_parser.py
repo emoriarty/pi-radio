@@ -3,11 +3,6 @@ from lxml import etree as ET
 parser = ET.XMLParser(ns_clean=True, recover=True, encoding='utf-8')
 
 
-def parse_root(raw):
-    root = ET.fromstring(raw.encode('utf-8'), parser)
-    return root.xpath("//Item[contains(., 'Radiobrowser')]/UrlDir/text()")
-
-
 def parse_dir(raw):
     doc = ET.fromstring(raw.encode('utf-8'), parser)
 
