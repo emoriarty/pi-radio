@@ -54,6 +54,7 @@ class AppManager():
     def on_click_folder(self, dir_name):
         self.fetch(dir_name)
         self.app.layout = self.wm.layout
+        self.next_window()
         self.current_dir = dir_name
 
     def on_click_station(self, station_name):
@@ -66,8 +67,8 @@ class AppManager():
         dirs, stations = self.browser.fetch(dir_name)
 
         if len(dirs) > 0:
-            self.wm.append_folder(AppManager.format_dirs(dirs),
-                                  self.on_click_folder, 'No folders')
+            self.wm.insert_folder(AppManager.format_dirs(dirs),
+                                  self.on_click_folder)
         if len(stations) > 0:
             self.wm.show_stations(AppManager.format_stations(stations),
                                   self.on_click_station, 'No stations')
