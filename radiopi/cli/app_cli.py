@@ -1,20 +1,14 @@
-from prompt_toolkit.application import Application, get_app
-from prompt_toolkit.buffer import Buffer
-from prompt_toolkit.layout.containers import HSplit, VSplit, Window, WindowAlign
-from prompt_toolkit.layout.controls import BufferControl, FormattedTextControl
-from prompt_toolkit.layout.layout import Layout
-from prompt_toolkit.key_binding import KeyBindings
-from prompt_toolkit.key_binding.bindings.focus import focus_next, focus_previous
-from pyfiglet import Figlet
+from os import path
 import vlc
-import os
+from prompt_toolkit.application import Application
+from prompt_toolkit.key_binding import KeyBindings
 from ..browser import Browser
-from .selector_control import SelectorControl
 from .window_manager import WindowManager
 from ..log import Log
+from ..settings import CONFIG_PATH
 
 log = Log('cli.log').logging
-vlc_log = os.path.join(Log.log_folder(), 'vlc.log')
+vlc_log = path.join(CONFIG_PATH, 'vlc.log')
 
 
 class AppManager():
