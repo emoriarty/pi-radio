@@ -7,7 +7,7 @@ __all__ = ["RadioList"]
 log = Log('cli.log').logging
 
 class RadioList(BaseRadioList):
-    def __init__(self, values, handler, message, index=0):
+    def __init__(self, values, handler, index=0):
         def page_up(event):
             w = event.app.layout.current_window
             self._selected_index = max(
@@ -21,7 +21,6 @@ class RadioList(BaseRadioList):
             )
 
         self.handler = handler
-        self.message = message
         super().__init__(values)
         self.control.key_bindings.add('c-b')(page_up)
         self.control.key_bindings.add('c-f')(page_down)
