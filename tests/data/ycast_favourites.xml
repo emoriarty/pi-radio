@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<ListOfItems>
+	<ItemCount>3</ItemCount>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>MY_37AC26A14BA2</StationId>
+		<StationName>Feeling Floyd Rock</StationName>
+		<StationUrl>http://91.121.59.45:8013/stream</StationUrl>
+		<StationDesc>Favourites</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=MY_37AC26A14BA2</Logo>
+		<StationFormat>Favourites</StationFormat>
+		<StationLocation />
+		<StationBandWidth>None</StationBandWidth>
+		<StationMime />
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>MY_DA7320879AE1</StationId>
+		<StationName>Radio 3</StationName>
+		<StationUrl>http://radio3.rtveradio.cires21.com/radio3_hc.mp3</StationUrl>
+		<StationDesc>Favourites</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=MY_DA7320879AE1</Logo>
+		<StationFormat>Favourites</StationFormat>
+		<StationLocation />
+		<StationBandWidth>None</StationBandWidth>
+		<StationMime />
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>MY_BF56642F9F5D</StationId>
+		<StationName>ScannerFM</StationName>
+		<StationUrl>http://streaming.radio.co/s1843fc3d4/listen</StationUrl>
+		<StationDesc>Favourites</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=MY_BF56642F9F5D</Logo>
+		<StationFormat>Favourites</StationFormat>
+		<StationLocation />
+		<StationBandWidth>None</StationBandWidth>
+		<StationMime />
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+</ListOfItems>

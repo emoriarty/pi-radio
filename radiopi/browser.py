@@ -8,19 +8,9 @@ class Browser:
     URL = os.getenv('YCAST_HOST')
 
     def __init__(self):
-        self.parser = ET.XMLParser(ns_clean=True,
-                                   recover=True,
-                                   encoding='utf-8')
-
-        req = requests.get(Browser.URL)
-        index = parse_root(req.text)
-
-        if len(index) == 0:
-            raise Exception('Radio Browser did not return index endpoint')
-
-        self.__directories = {None: {"url": index[0]}}
+        self.__directories = {None: {"url": Browser.URL}}
         self.__stations = {}
-        self.fetch(cache=False)
+        self._fetch_and_parse(Browser.URL)
 
     def fetch(self, directory=None, cache=True):
         if cache is True:
@@ -31,9 +21,13 @@ class Browser:
                     self.filter_directories_by('dir', directory).values()),
                         self.__stations[directory])
 
-        req = requests.get(self.__directories[directory]["url"])
-        dirs = self.__parse_dir(req.text, directory)
-        stations = self.__parse_station(req.text, directory)
+        return self._fetch_and_parse(directory=directory,
+                                     url=self.__directories[directory]["url"])
+
+    def _fetch_and_parse(self, url, directory=None):
+        req = requests.get(url)
+        dirs = self._parse_dir(req.text, directory)
+        stations = self._parse_station(req.text, directory)
         return (list(dirs.values()), stations)
 
     @property
@@ -52,7 +46,7 @@ class Browser:
                 lambda elem: elem[1].get(prop) is value and elem[0] is
                 not None, self.__directories.items()))
 
-    def __parse_dir(self, doc, directory=None):
+    def _parse_dir(self, doc, directory=None):
         titles, urls, counts = parse_dir(doc)
         dirs = {}
 
@@ -67,7 +61,7 @@ class Browser:
         self.__directories = {**self.__directories, **dirs}
         return dirs
 
-    def __parse_station(self, doc, directory):
+    def _parse_station(self, doc, directory):
         names, urls, logos, mimes, bandrates = parse_station(doc)
         stations = []
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<ListOfItems>
+	<ItemCount>1</ItemCount>
+	<Item>
+		<ItemType>Dir</ItemType>
+		<Title>Favourites</Title>
+		<UrlDir>http://localhost:8010/ycast/my_stations/Favourites?vtuner=true</UrlDir>
+		<UrlDirBackUp>http://localhost:8010/ycast/my_stations/Favourites?vtuner=true</UrlDirBackUp>
+		<DirCount>1</DirCount>
+	</Item>
+</ListOfItems>

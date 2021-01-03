@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<ListOfItems>
+	<ItemCount>62</ItemCount>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_d4c545ef-a4e5-412a-b141-852c2fe50707</StationId>
+		<StationName>- 0 N - 50s on Radio ON 50s</StationName>
+		<StationUrl>http://0n-50s.radionetz.de/0n-50s.mp3</StationUrl>
+		<StationDesc>evergreens, rock'n'roll, goldies, oldies, 1950s, 50er, 50s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_d4c545ef-a4e5-412a-b141-852c2fe50707</Logo>
+		<StationFormat>evergreens</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_a8586ff7-fe81-42ef-a3fd-3680333bf9c4</StationId>
+		<StationName>- 0 N - 50s on Radio ON 50s</StationName>
+		<StationUrl>http://0n-50s.radionetz.de/0n-50s.aac</StationUrl>
+		<StationDesc>evergreens, rock'n'roll, goldies, oldies, 1950s, 50er, 50s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_a8586ff7-fe81-42ef-a3fd-3680333bf9c4</Logo>
+		<StationFormat>evergreens</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>64</StationBandWidth>
+		<StationMime>AAC</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_f36b67a6-b7aa-4511-a2fa-53feed51abe2</StationId>
+		<StationName>- 0 N - Gold on Radio ON Gold</StationName>
+		<StationUrl>http://0n-gold.radionetz.de/0n-gold.mp3</StationUrl>
+		<StationDesc>rock'n'roll, goldies, oldies, 1960s, 60er, 60s, 1950s, 50er, 50s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_f36b67a6-b7aa-4511-a2fa-53feed51abe2</Logo>
+		<StationFormat>rock'n'roll</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_0204d7b0-6976-4495-89e6-8b33ca7cd6f7</StationId>
+		<StationName>- 0 N - Gold on Radio ON Gold</StationName>
+		<StationUrl>http://0n-gold.radionetz.de/0n-gold.aac</StationUrl>
+		<StationDesc>rock'n'roll, goldies, oldies, 1960s, 60er, 60s, 1950s, 50er, 50s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_0204d7b0-6976-4495-89e6-8b33ca7cd6f7</Logo>
+		<StationFormat>rock'n'roll</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>64</StationBandWidth>
+		<StationMime>AAC</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_dad8c8b3-f2c2-11e8-a471-52543be04c81</StationId>
+		<StationName>- 0 N - Oldies on Radio ON Oldies</StationName>
+		<StationUrl>http://0n-oldies.radionetz.de/0n-oldies.mp3</StationUrl>
+		<StationDesc>disco, rock'n'roll, 80er, 70er, 60er, 50er, 80s, 70s, 60s, 50s, golden oldies, retro, goldies,
+			oldies</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_dad8c8b3-f2c2-11e8-a471-52543be04c81</Logo>
+		<StationFormat>disco</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_2471b2df-f2c3-11e8-a471-52543be04c81</StationId>
+		<StationName>- 0 N - Oldies on Radio ON Oldies</StationName>
+		<StationUrl>http://0n-oldies.radionetz.de/0n-oldies.aac</StationUrl>
+		<StationDesc>disco, rock'n'roll, 80er, 70er, 60er, 50er, 80s, 70s, 60s, 50s, golden oldies, retro, goldies,
+			oldies</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_2471b2df-f2c3-11e8-a471-52543be04c81</Logo>
+		<StationFormat>disco</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>64</StationBandWidth>
+		<StationMime>AAC</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_9a5f5377-bf9d-11e9-8502-52543be04c81</StationId>
+		<StationName>- 0 N - Schlager Gold on Radio ON Schlager Gold</StationName>
+		<StationUrl>http://0n-schlagergold.radionetz.de/0n-schlagergold.mp3</StationUrl>
+		<StationDesc>schlager, german, world music, oldies, goldies, rock'n'roll, 50er, 50s, 60er, 60s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_9a5f5377-bf9d-11e9-8502-52543be04c81</Logo>
+		<StationFormat>schlager</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_d218a93a-bf9d-11e9-8502-52543be04c81</StationId>
+		<StationName>- 0 N - Schlager Gold on Radio ON Schlager Gold</StationName>
+		<StationUrl>http://0n-schlagergold.radionetz.de/0n-schlagergold.aac</StationUrl>
+		<StationDesc>60s, 60er, 50s, 50er, rock'n'roll, goldies, oldies, world music, german, schlager</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_d218a93a-bf9d-11e9-8502-52543be04c81</Logo>
+		<StationFormat>60s</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>64</StationBandWidth>
+		<StationMime>AAC+</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_05a9eb02-33b0-11e9-8f31-52543be04c81</StationId>
+		<StationName>- 1A Oldies -</StationName>
+		<StationUrl>http://1a-oldies.radionetz.de/1a-oldies.mp3</StationUrl>
+		<StationDesc>disco, rock'n'roll, 80er, 70er, 60er, 50er, 80s, 70s, 60s, 50s, golden oldies, retro, goldies,
+			oldies</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_05a9eb02-33b0-11e9-8f31-52543be04c81</Logo>
+		<StationFormat>disco</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_2741cad7-33b0-11e9-8f31-52543be04c81</StationId>
+		<StationName>- 1A Oldies -</StationName>
+		<StationUrl>http://1a-oldies.radionetz.de/1a-oldies.aac</StationUrl>
+		<StationDesc>disco, rock'n'roll, 80er, 70er, 60er, 50er, 80s, 70s, 60s, 50s, golden oldies, retro, goldies,
+			oldies</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_2741cad7-33b0-11e9-8f31-52543be04c81</Logo>
+		<StationFormat>disco</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>64</StationBandWidth>
+		<StationMime>AAC</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_b7835e9e-f36c-11e8-a471-52543be04c81</StationId>
+		<StationName>- 1A Schlager Gold -</StationName>
+		<StationUrl>http://1a-schlagergold.radionetz.de/1a-schlagergold.mp3</StationUrl>
+		<StationDesc>60s, 60er, 50s, 50er, rock'n'roll, goldies, oldies, world music, german, schlager</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_b7835e9e-f36c-11e8-a471-52543be04c81</Logo>
+		<StationFormat>60s</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_e60208dd-f36c-11e8-a471-52543be04c81</StationId>
+		<StationName>- 1A Schlager Gold -</StationName>
+		<StationUrl>http://1a-schlagergold.radionetz.de/1a-schlagergold.aac</StationUrl>
+		<StationDesc>60s, 60er, 50s, 50er, rock'n'roll, goldies, oldies, world music, german, schlager</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_e60208dd-f36c-11e8-a471-52543be04c81</Logo>
+		<StationFormat>60s</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>64</StationBandWidth>
+		<StationMime>AAC</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_abab5c03-629c-11e8-b15b-52543be04c81</StationId>
+		<StationName>011.FM - Non Stop 60's</StationName>
+		<StationUrl>http://listen.011fm.com:8004/stream03</StationUrl>
+		<StationDesc>60s, 50s, 40s, 30s, 20s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_abab5c03-629c-11e8-b15b-52543be04c81</Logo>
+		<StationFormat>60s</StationFormat>
+		<StationLocation>US</StationLocation>
+		<StationBandWidth>192</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_962a6a94-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>1.FM - Back To The 50's &amp; 60's Radio</StationName>
+		<StationUrl>http://strm112.1.fm/60s_70s_mobile_mp3</StationUrl>
+		<StationDesc>50s, 60s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_962a6a94-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>50s</StationFormat>
+		<StationLocation>CH</StationLocation>
+		<StationBandWidth>192</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_670019c5-a8a7-11e8-a907-52543be04c81</StationId>
+		<StationName>1000 Oldies</StationName>
+		<StationUrl>http://c3.auracast.net:8010/stream</StationUrl>
+		<StationDesc>classic hits, goldies, oldies, 50s, 80s, 70s, 60s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_670019c5-a8a7-11e8-a907-52543be04c81</Logo>
+		<StationFormat>classic hits</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_7ee92488-e9b0-450e-8d91-39ffa9ed2f4c</StationId>
+		<StationName>4 Decades Radio</StationName>
+		<StationUrl>http://mediaserv30.live-streams.nl:2199/tunein/fourdecades.pls</StationUrl>
+		<StationDesc>50s, 60s, 70s, 80s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_7ee92488-e9b0-450e-8d91-39ffa9ed2f4c</Logo>
+		<StationFormat>50s</StationFormat>
+		<StationLocation />
+		<StationBandWidth>192</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_962dba26-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>50s All Time Greatest</StationName>
+		<StationUrl>http://listen.radionomy.com/50salltimegreatest.m3u</StationUrl>
+		<StationDesc>50s, 60s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_962dba26-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>50s</StationFormat>
+		<StationLocation>CY</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_963a77ea-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>57 Chevy Radio</StationName>
+		<StationUrl>http://www.outpostradio.com/57chevyradio/chevy.m3u</StationUrl>
+		<StationDesc>60s, 50s, oldies</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_963a77ea-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>60s</StationFormat>
+		<StationLocation>US</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_074b73c3-c8d0-4a33-a060-f0183c50d72e</StationId>
+		<StationName>Addictive-50's</StationName>
+		<StationUrl>http://hazel.torontocast.com:3055/stream</StationUrl>
+		<StationDesc>decades, retro, oldies, 50s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_074b73c3-c8d0-4a33-a060-f0183c50d72e</Logo>
+		<StationFormat>decades</StationFormat>
+		<StationLocation>CA</StationLocation>
+		<StationBandWidth>64</StationBandWidth>
+		<StationMime>AAC+</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_bd406025-f400-11e9-a96c-52543be04c81</StationId>
+		<StationName>Allzic Radio 50s</StationName>
+		<StationUrl>http://allzic29.ice.infomaniak.ch/allzic29.mp3</StationUrl>
+		<StationDesc>chansons fran&#231;aises, 50s, 1950s, oldies</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_bd406025-f400-11e9-a96c-52543be04c81</Logo>
+		<StationFormat>chansons fran&#231;aises</StationFormat>
+		<StationLocation>FR</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_b9e1a945-2c14-11e8-91bf-52543be04c81</StationId>
+		<StationName>Alpenradio Rockin&#180;</StationName>
+		<StationUrl>http://listen.radionomy.com/alpenradio-rockin-.m3u</StationUrl>
+		<StationDesc>rock'n'roll, 50s, 60s, rockabilly</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_b9e1a945-2c14-11e8-91bf-52543be04c81</Logo>
+		<StationFormat>rock'n'roll</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_3b1f7f4d-fd89-11e9-bbf2-52543be04c81</StationId>
+		<StationName>Angel Radio</StationName>
+		<StationUrl>http://s8.viastreaming.net/7030/listen.m3u</StationUrl>
+		<StationDesc>community radio - seniors, nostalgia, swing, 60s, 50s, 40s, 30s, 20s, evergreens</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_3b1f7f4d-fd89-11e9-bbf2-52543be04c81</Logo>
+		<StationFormat>community radio - seniors</StationFormat>
+		<StationLocation>GB</StationLocation>
+		<StationBandWidth>96</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_960dad8d-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>CKJR 1440 "W1440" Wetaskiwin, AB</StationName>
+		<StationUrl>http://newcap.leanstream.co/CKJRAM</StationUrl>
+		<StationDesc>westaskiwin, 70s, 60s, 50s, oldies, commercial</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_960dad8d-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>westaskiwin</StationFormat>
+		<StationLocation>CA</StationLocation>
+		<StationBandWidth>135</StationBandWidth>
+		<StationMime>AAC</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_df5748d5-1f8a-11e8-a334-52543be04c81</StationId>
+		<StationName>Doo-Wop Radio</StationName>
+		<StationUrl>http://66.59.109.207:9000/</StationUrl>
+		<StationDesc>doowop, doo-wop, african american, black, 60s, 50s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_df5748d5-1f8a-11e8-a334-52543be04c81</Logo>
+		<StationFormat>doowop</StationFormat>
+		<StationLocation>US</StationLocation>
+		<StationBandWidth>96</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_9637bc91-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>Golden 50/70s Hits</StationName>
+		<StationUrl>http://listen.radionomy.com/golden-50-70s-hits.m3u</StationUrl>
+		<StationDesc>g'n'm, oldies, 50s, 60s, 70s, classic hits</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_9637bc91-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>g'n'm</StationFormat>
+		<StationLocation>FR</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_963d2ef6-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>Gotradio 50s</StationName>
+		<StationUrl>http://173.244.215.163:8440/</StationUrl>
+		<StationDesc>50s, oldies</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_963d2ef6-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>50s</StationFormat>
+		<StationLocation>US</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_9623fecf-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>Honkytonk Hootenanny - Old School Country Style!</StationName>
+		<StationUrl>http://199.195.194.140:8069/</StationUrl>
+		<StationDesc>50s, country, swing, western</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_9623fecf-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>50s</StationFormat>
+		<StationLocation>US</StationLocation>
+		<StationBandWidth>48</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_058ec576-fd89-11e9-bbf2-52543be04c81</StationId>
+		<StationName>http://s8.viastreaming.net/7030/listen.m3u</StationName>
+		<StationUrl>http://s8.viastreaming.net/7030/listen.m3u</StationUrl>
+		<StationDesc>nostalgia, community radio - seniors, country, swing, 60s, 50s, 40s, 30s, 20s, evergreens
+		</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_058ec576-fd89-11e9-bbf2-52543be04c81</Logo>
+		<StationFormat>nostalgia</StationFormat>
+		<StationLocation>GB</StationLocation>
+		<StationBandWidth>96</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_960df8fc-3127-11ea-afca-52543be04c81</StationId>
+		<StationName>iradiophilly Bandstand</StationName>
+		<StationUrl>http://kmr-oom.streamguys1.com:80/bandstand</StationUrl>
+		<StationDesc>oldies, 60s, 50s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_960df8fc-3127-11ea-afca-52543be04c81</Logo>
+		<StationFormat>oldies</StationFormat>
+		<StationLocation>US</StationLocation>
+		<StationBandWidth>100</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_887f8bbd-73ee-11ea-b1cf-52543be04c81</StationId>
+		<StationName>KBRD</StationName>
+		<StationUrl>http://205.134.192.90:680/</StationUrl>
+		<StationDesc>music, 50s, 40s, 30s, 20s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_887f8bbd-73ee-11ea-b1cf-52543be04c81</Logo>
+		<StationFormat>music</StationFormat>
+		<StationLocation>US</StationLocation>
+		<StationBandWidth>56</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_96396081-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>KHGV-LP 99.7 FM Houston, TX</StationName>
+		<StationUrl>http://76.204.94.60:8000/1</StationUrl>
+		<StationDesc>houston, oldies, 50s, 60s, 70s, 80s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_96396081-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>houston</StationFormat>
+		<StationLocation>US</StationLocation>
+		<StationBandWidth>64</StationBandWidth>
+		<StationMime>AAC</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_d4a4e466-47d5-11e8-8919-52543be04c81</StationId>
+		<StationName>KOMY 1340 AM Santa Cruz CA</StationName>
+		<StationUrl>http://www.ksco.com/komylive.m3u</StationUrl>
+		<StationDesc>talk radio, 50s, 60s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_d4a4e466-47d5-11e8-8919-52543be04c81</Logo>
+		<StationFormat>talk radio</StationFormat>
+		<StationLocation>US</StationLocation>
+		<StationBandWidth>32</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_964127e1-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>KOOL Oldies 1610.com Oakhurst, CA</StationName>
+		<StationUrl>http://audio.misproductions.com:8204/</StationUrl>
+		<StationDesc>oakhurst, 50s, 60s, 70s, oldies</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_964127e1-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>oakhurst</StationFormat>
+		<StationLocation>US</StationLocation>
+		<StationBandWidth>80</StationBandWidth>
+		<StationMime>AAC+</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_9610ac7f-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>Laut.FM 1000 Oldies</StationName>
+		<StationUrl>
+			http://1000oldies.stream.laut.fm/1000oldies?t302=2018-01-16_15-40-29&amp;uuid=37780fea-d865-4439-9a4a-66f3ec1715a0
+		</StationUrl>
+		<StationDesc>80s, 70s, 60s, 50s, rock, pop, oldies</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_9610ac7f-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>80s</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_963b0409-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>laut.fm Sound</StationName>
+		<StationUrl>http://stream.laut.fm/sound</StationUrl>
+		<StationDesc>20s, 30s, 40s, 50s, 60s, 70s, folk, country, americana, oldies, old time radio, country blues,
+			classic folk, classic country, folk rock, country rock</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_963b0409-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>20s</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_961cc006-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>Laut.FM Teddyboys 1983</StationName>
+		<StationUrl>http://stream.laut.fm/radio-teddyboys-1983</StationUrl>
+		<StationDesc>60s, 50s, country, rockabilly, rock'n'roll</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_961cc006-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>60s</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_eadfafef-1528-11e9-a80b-52543be04c81</StationId>
+		<StationName>Melody</StationName>
+		<StationUrl>http://193.108.24.6:8000/melody</StationUrl>
+		<StationDesc>00s, 90s, 80s, 70s, 60s, 50s, best, melody</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_eadfafef-1528-11e9-a80b-52543be04c81</Logo>
+		<StationFormat>00s</StationFormat>
+		<StationLocation>BG</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_960bc069-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>memoryradio 1</StationName>
+		<StationUrl>http://www.memoryradio.de:4000/</StationUrl>
+		<StationDesc>70s, 60s, 50s, schlager</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_960bc069-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>70s</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>192</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_9607875b-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>memoryradio 2</StationName>
+		<StationUrl>http://www.memoryradio.de:5000/</StationUrl>
+		<StationDesc>50s, 40s, 30s, 20s, schlager</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_9607875b-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>50s</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_79b576fa-03e5-11ea-bbf2-52543be04c81</StationId>
+		<StationName>Nostalgie+</StationName>
+		<StationUrl>http://streamingp.shoutcast.com/nostaplus-mp3</StationUrl>
+		<StationDesc>chansons fran&#231;aises, 70s, 60s, 50s, oldies</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_79b576fa-03e5-11ea-bbf2-52543be04c81</Logo>
+		<StationFormat>chansons fran&#231;aises</StationFormat>
+		<StationLocation>BE</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_9630b328-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>Pure Vintage Radio</StationName>
+		<StationUrl>http://www.radioking.com/play/pure-vintage-radio</StationUrl>
+		<StationDesc>50s, 60s, rock'n'roll, rockabilly</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_9630b328-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>50s</StationFormat>
+		<StationLocation>FR</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_fe3e7c6e-1baa-11e8-a334-52543be04c81</StationId>
+		<StationName>R.SA Snow Fun</StationName>
+		<StationUrl>http://streams.rsa-sachsen.de/100/mp3-192/streams.rsa-sachsen.de/</StationUrl>
+		<StationDesc>party, hits, schlager, 10s, 00s, 90s, 80s, 70s, 60s, 50s, dance, disco, rnb, rock, pop, pop rock,
+			oldies, contemporary</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_fe3e7c6e-1baa-11e8-a334-52543be04c81</Logo>
+		<StationFormat>party</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>192</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_964666fc-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>Radio Breezes - Fifties Favorites</StationName>
+		<StationUrl>http://listen.radionomy.com/fiftiesfavorites.m3u</StationUrl>
+		<StationDesc>oldies, 50s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_964666fc-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>oldies</StationFormat>
+		<StationLocation>US</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_2e7b8947-6bbc-471b-8053-c5291d80af4e</StationId>
+		<StationName>Radio Nostalgia</StationName>
+		<StationUrl>http://fred.torontocast.com:1395/stream</StationUrl>
+		<StationDesc>big band, chansons fran&#231;aises, schlager, big band, jive, swing, jazz, 50s, top 40, 30s, 1920s,
+			oldies, 78 rpm</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_2e7b8947-6bbc-471b-8053-c5291d80af4e</Logo>
+		<StationFormat>big band</StationFormat>
+		<StationLocation>NL</StationLocation>
+		<StationBandWidth>192</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_964839b9-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>Radio Nostalgia</StationName>
+		<StationUrl>http://radio-nostalgia.nl/nostalgia.asx</StationUrl>
+		<StationDesc>oldies, 50s, 60s, 70s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_964839b9-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>oldies</StationFormat>
+		<StationLocation>NL</StationLocation>
+		<StationBandWidth>320</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_49c36fe6-8b0b-11e9-ad01-52543be04c81</StationId>
+		<StationName>Radio Reload</StationName>
+		<StationUrl>http://onair15.xdevel.com:7012/1/;</StationUrl>
+		<StationDesc>messina, top 40, pop, rock, electronic, house, electro, funk, 50s, 60s, 70s, 80s, 90s, 00s
+		</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_49c36fe6-8b0b-11e9-ad01-52543be04c81</Logo>
+		<StationFormat>messina</StationFormat>
+		<StationLocation>IT</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_1f09c66c-815f-40f4-b526-5d30009710b9</StationId>
+		<StationName>Radio Vintage</StationName>
+		<StationUrl>http://solid41.streamupsolutions.com:2199/tunein/boahybvx.pls</StationUrl>
+		<StationDesc>big band, rockabilly, swing, 50s, 40s, vintage</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_1f09c66c-815f-40f4-b526-5d30009710b9</Logo>
+		<StationFormat>big band</StationFormat>
+		<StationLocation>US</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_9f9651ee-6825-43d1-950b-b1f9c7ff1c2c</StationId>
+		<StationName>Radioachterhoek.nl</StationName>
+		<StationUrl>http://stream.radioachterhoek.nl/index.html?sid=1</StationUrl>
+		<StationDesc>80s, 70s, 60s, 50s, public radio, radioachterhoek, achterhoek</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_9f9651ee-6825-43d1-950b-b1f9c7ff1c2c</Logo>
+		<StationFormat>80s</StationFormat>
+		<StationLocation>NL</StationLocation>
+		<StationBandWidth>320</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_386e7eb1-39ba-11ea-8dd7-52543be04c81</StationId>
+		<StationName>Ratpack</StationName>
+		<StationUrl>http://ice55.securenetsystems.net/DASH5</StationUrl>
+		<StationDesc>easy listening, 20c, 60s, 1960s, 1950s, 50s, contemporary hits, dash, dashradio, jazz, swing,
+			lounge</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_386e7eb1-39ba-11ea-8dd7-52543be04c81</Logo>
+		<StationFormat>easy listening</StationFormat>
+		<StationLocation>US</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_964976ac-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>RetroSouvenirs</StationName>
+		<StationUrl>http://listen.radioking.com/radio/108/stream/61183</StationUrl>
+		<StationDesc>oldies, 50s, 60s, 70s, 80s, 90s, classic hits</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_964976ac-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>oldies</StationFormat>
+		<StationLocation>CA</StationLocation>
+		<StationBandWidth>64</StationBandWidth>
+		<StationMime>AAC</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_d8c85fb3-d142-11e9-a861-52543be04c81</StationId>
+		<StationName>RocaFM Clasicos Caracas</StationName>
+		<StationUrl>http://protostar.shoutca.st:8370</StationUrl>
+		<StationDesc>90s, 80s, 50s, 70s, 60s, golden, golden oldies, goldies, oldies, venezuela</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_d8c85fb3-d142-11e9-a861-52543be04c81</Logo>
+		<StationFormat>90s</StationFormat>
+		<StationLocation>VE</StationLocation>
+		<StationBandWidth>224</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_13392b78-4557-11e8-8919-52543be04c81</StationId>
+		<StationName>ROCK ANTENNE Rock'n'Roll</StationName>
+		<StationUrl>http://www.rockantenne.de/webradio/rockantenne.m3u</StationUrl>
+		<StationDesc>50s, rock, rock'n'roll</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_13392b78-4557-11e8-8919-52543be04c81</Logo>
+		<StationFormat>50s</StationFormat>
+		<StationLocation>DE</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_961500c9-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>Rockabilly Radio</StationName>
+		<StationUrl>http://lin3.ash.fast-serv.com:6026/stream_96</StationUrl>
+		<StationDesc>50s, rock, rockabilly</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_961500c9-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>50s</StationFormat>
+		<StationLocation>GB</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_7015a1a3-82d8-11e9-aa30-52543be04c81</StationId>
+		<StationName>Scott Shannon's True Oldies Channel</StationName>
+		<StationUrl>http://streaming.live365.com/b92108_128mp3</StationUrl>
+		<StationDesc>1970s, 70s, 1960s, 60s, 1950s, 50s, oldies</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_7015a1a3-82d8-11e9-aa30-52543be04c81</Logo>
+		<StationFormat>1970s</StationFormat>
+		<StationLocation>US</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_964f0d6f-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>Splash Radio - 1 Hits 50s</StationName>
+		<StationUrl>http://listen.radionomy.com/1hits50s.m3u</StationUrl>
+		<StationDesc>50s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_964f0d6f-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>50s</StationFormat>
+		<StationLocation>ES</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_964f148e-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>Splash Radio - 1000 HITS Sweet Radio</StationName>
+		<StationUrl>http://listen.radionomy.com/1000-hits-sweet-radio.m3u</StationUrl>
+		<StationDesc>oldies, 50s, 60s, 70s, 80s, 90s, 00s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_964f148e-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>oldies</StationFormat>
+		<StationLocation>ES</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_962c1da9-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>Sveriges Radio - P4 Plus</StationName>
+		<StationUrl>http://sverigesradio.se/topsy/direkt/4951-hi-aac.pls</StationUrl>
+		<StationDesc>00s, 90s, 80s, 70s, 60s, 50s, 40s, 30s, public radio, sveriges radio</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_962c1da9-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>00s</StationFormat>
+		<StationLocation>SE</StationLocation>
+		<StationBandWidth>192</StationBandWidth>
+		<StationMime>AAC</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_6e00a26e-2041-11e8-a334-52543be04c81</StationId>
+		<StationName>The Doo-Wop Express</StationName>
+		<StationUrl>http://los.cdnstream.com/1136_128</StationUrl>
+		<StationDesc>doowop, doo-wop, black, african american, 60s, 50s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_6e00a26e-2041-11e8-a334-52543be04c81</Logo>
+		<StationFormat>doowop</StationFormat>
+		<StationLocation />
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_964e4511-0601-11e8-ae97-52543be04c81</StationId>
+		<StationName>The UK 1950s Radio Station</StationName>
+		<StationUrl>http://91.121.134.23:8648/stream</StationUrl>
+		<StationDesc>50s</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_964e4511-0601-11e8-ae97-52543be04c81</Logo>
+		<StationFormat>50s</StationFormat>
+		<StationLocation>GB</StationLocation>
+		<StationBandWidth>128</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_46e34bb0-d8cd-11e9-a861-52543be04c81</StationId>
+		<StationName>TOP FM oldies</StationName>
+		<StationUrl>http://live.topfm.hu:8000/oldies.mp3</StationUrl>
+		<StationDesc>oldies, retro, 50s, 60s, 70s, 80s, all-time favourites, hits</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_46e34bb0-d8cd-11e9-a861-52543be04c81</Logo>
+		<StationFormat>oldies</StationFormat>
+		<StationLocation />
+		<StationBandWidth>48</StationBandWidth>
+		<StationMime>AAC+</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_21b577c4-3ef1-11e8-b74d-52543be04c81</StationId>
+		<StationName>TopShelf Oldies</StationName>
+		<StationUrl>http://listen.topshelfoldies.org:8002/stream</StationUrl>
+		<StationDesc>pop, garage, british invasion, soul, rockabilly, doo wop, 60s, 50s, oldies</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_21b577c4-3ef1-11e8-b74d-52543be04c81</Logo>
+		<StationFormat>pop</StationFormat>
+		<StationLocation>US</StationLocation>
+		<StationBandWidth>192</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+	<Item>
+		<ItemType>Station</ItemType>
+		<StationId>RB_ac4e57b5-9db9-406c-b221-0fc4401253a4</StationId>
+		<StationName>WGNY - Fox Oldies 98.9 FM</StationName>
+		<StationUrl>http://ice64.securenetsystems.net/WGNYFM2</StationUrl>
+		<StationDesc>classic hits, 70s, 60s, 50s, oldies</StationDesc>
+		<Logo>http://localhost:8010/ycast/icon?id=RB_ac4e57b5-9db9-406c-b221-0fc4401253a4</Logo>
+		<StationFormat>classic hits</StationFormat>
+		<StationLocation />
+		<StationBandWidth>64</StationBandWidth>
+		<StationMime>MP3</StationMime>
+		<Relia>3</Relia>
+		<Bookmark />
+	</Item>
+</ListOfItems>
