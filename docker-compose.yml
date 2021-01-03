@@ -4,3 +4,8 @@ services:
     image: "netraams/ycast-docker:v18"
     ports:
       - "8010:80"
+    environment:
+      YC_STATIONS: /opt/ycast/stations/stations.yml
+      YC_DEBUG: "ON"
+    volumes:
+      - "~/.config/radiopi:/opt/ycast/stations"
