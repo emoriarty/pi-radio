@@ -1,40 +1,31 @@
 from prompt_toolkit.layout.containers import HSplit, VSplit, Window, WindowAlign
 from prompt_toolkit.layout.controls import FormattedTextControl
+from prompt_toolkit.formatted_text import FormattedText
 from prompt_toolkit.layout.layout import Layout
+from prompt_toolkit.widgets import Box, Frame, VerticalLine, HorizontalLine
 from pyfiglet import Figlet
 from .selector_control import SelectorControl
+from ..log import Log
+
+log = Log('cli.log').logging
 
 __all__ = ["WindowManager"]
+
+flatten = lambda t: [item for sublist in t for item in sublist]
 
 
 class WindowManager():
     def __init__(self):
-        self.selectors = [SelectorControl(), SelectorControl(), SelectorControl()]
+        self.selectors = []
+        self.folders = []
+        self.stations = SelectorControl()
         self.index = 0
 
-    @property
-    def root(self):
-        return self.selectors[0]
+    def append_folder(self, *folder_tuple):
+        self.folders.append(SelectorControl(*folder_tuple))
 
-    @root.setter
-    def root(self, root_tuple):
-        self.selectors[0].props = root_tuple
-
-    @property
-    def dirs(self):
-        return self.selectors[1]
-
-    @dirs.setter
-    def dirs(self, dirs_tuple):
-        self.selectors[1].props = dirs_tuple
-
-    @property
-    def stations(self):
-        return self.selectors[2]
-
-    @stations.setter
-    def stations(self, stations_tuple):
-        self.selectors[2].props = stations_tuple
+    def show_stations(self, *station_tuple):
+        self.stations.props = station_tuple
 
     @property
     def count(self):
@@ -56,17 +47,21 @@ class WindowManager():
 
     @property
     def layout(self):
+        folders = flatten(
+            map(lambda i: (HorizontalLine(), i.radio_list), self.folders))
+        self.selectors = list(map(lambda i: i, self.folders)) + [self.stations]
+        log.debug(self.selectors)
         return Layout(
             VSplit([
                 HSplit([
                     WindowManager.header(),
-                    WindowManager.horizontal_bar(),
-                    self.root.radio_list,
-                    WindowManager.horizontal_bar(),
-                    self.dirs.radio_list,
-                ]),
-                WindowManager.vertical_bar(),
-                self.stations.radio_list,
+                ] + folders),
+                VerticalLine(),
+                HSplit([
+                    WindowManager.player(),
+                    HorizontalLine(),
+                    self.stations.radio_list,
+                ])
             ]))
 
     @staticmethod
@@ -77,12 +72,16 @@ class WindowManager():
                       align=WindowAlign.LEFT)
 
     @staticmethod
-    def horizontal_bar():
-        return Window(char='—', height=1)
+    def legend():
+        return Window(content=FormattedTextControl(),
+                      height=6,
+                      align=WindowAlign.LEFT)
 
     @staticmethod
-    def vertical_bar():
-        return Window(width=1, char='|')
+    def player():
+        return Window(content=FormattedTextControl('player'),
+                      height=6,
+                      align=WindowAlign.LEFT)
 
     @staticmethod
     def get_selector_layout(selector, message):

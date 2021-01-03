@@ -1,19 +1,24 @@
 from .radio_list import RadioList
 from prompt_toolkit.layout.containers import Window, WindowAlign
 from prompt_toolkit.layout.controls import FormattedTextControl
+from prompt_toolkit.widgets import Box
+from ..log import Log
+
+log = Log('cli.log').logging
 
 __all__ = ["SelectorControl"]
+
 
 def empty_function():
     pass
 
+
 class SelectorControl():
-    def __init__(self, handler=empty_function, values=[], message='No items'):
-        self._handler = handler
+    def __init__(self, values=[], handler=empty_function, message='No items'):
         self._values = values
+        self._handler = handler
         self._message = message
-        #self.radio_list = RadioList(values, handler)
-        #self.index = self.radio_list.index 
+        self.radio_list = self._get_container()
 
     @property
     def values(self):
@@ -29,11 +34,11 @@ class SelectorControl():
 
     @handler.setter
     def handler(self, handler):
-        self.props = self._values, handler, self._message 
+        self.props = self._values, handler, self._message
 
     @property
     def message(self):
-        return self._message 
+        return self._message
 
     @message.setter
     def message(self, message):
@@ -42,7 +47,6 @@ class SelectorControl():
     @property
     def props(self):
         return (self.values, self.handler, self.message)
-
 
     @property
     def index(self):
@@ -61,7 +65,10 @@ class SelectorControl():
 
     def _get_container(self):
         if len(self.values) > 0:
-             return RadioList(self.values, self.handler, self.message)
+            return RadioList(self.values, self.handler)
 
-        return Window(content=FormattedTextControl(self.message),
-                      align=WindowAlign.CENTER)
+        return self._get_message()
+
+    def _get_message(self):
+        return Box(body=Window(content=FormattedTextControl(self.message),
+                               align=WindowAlign.CENTER))

@@ -32,8 +32,7 @@ class AppManager():
         self.current_station = None
 
         root = AppManager.format_dirs(self.browser.fetch()[0])
-        self.wm.root = (root, self.on_click_root, 'No lists')
-        self.fetch_dirs(root[0][1])
+        self.wm.append_folder(root, self.on_click_folder, 'No lists')
         self.app = Application(full_screen=True,
                                layout=self.wm.layout,
                                key_bindings=kb)
@@ -42,6 +41,48 @@ class AppManager():
                                      f'--logfile={vlc_log}', '--logmode=text',
                                      '--log-verbose=3')
         self.player = self.instance.media_player_new()
+
+    def next_window(self, _ev=None):
+        self.app.layout.focus(self.wm.next)
+
+    def prev_window(self, _ev=None):
+        self.app.layout.focus(self.wm.prev)
+
+    def exit(self, _ev):
+        self.app.exit()
+
+    def on_click_folder(self, dir_name):
+        self.fetch(dir_name)
+        self.app.layout = self.wm.layout
+        self.current_dir = dir_name
+
+    def on_click_station(self, station_name):
+        stations = self.browser.stations[self.current_dir]
+        station = next(x for x in stations if x['name'] == station_name)
+        self.current_station = station
+        self.play()
+
+    def fetch(self, dir_name):
+        dirs, stations = self.browser.fetch(dir_name)
+
+        if len(dirs) > 0:
+            self.wm.append_folder(AppManager.format_dirs(dirs),
+                                  self.on_click_folder, 'No folders')
+        if len(stations) > 0:
+            self.wm.show_stations(AppManager.format_stations(stations),
+                                  self.on_click_station, 'No stations')
+
+    def play(self, _ev=None):
+        log.info('currently playing: %s', self.current_station)
+        media = self.instance.media_new(self.current_station['url'])
+        self.player.set_media(media)
+        self.player.play()
+
+    def stop(self, _ev=None):
+        self.player.stop()
+
+    def run(self):
+        self.app.run()
 
     @staticmethod
     def format_dirs(dirs):
@@ -56,54 +97,3 @@ class AppManager():
         for i, di in enumerate(stations):
             list.append((i, di["name"]))
         return list
-
-    def next_window(self, _ev=None):
-        self.app.layout.focus(self.wm.next)
-
-    def prev_window(self, _ev=None):
-        self.app.layout.focus(self.wm.prev)
-
-    def exit(self, _ev):
-        self.app.exit()
-
-    def on_click_root(self, root_name):
-        self.fetch_dirs(root_name)
-        self.app.layout = self.wm.layout
-        self.next_window()
-
-    def on_click_dir(self, dir_name):
-        self.fetch_stations(dir_name)
-        self.app.layout = self.wm.layout
-        self.next_window()
-
-    def on_click_station(self, station_name):
-        stations = self.browser.stations[self.current_dir]
-        station = next(x for x in stations if x['name'] == station_name)
-        self.current_station = station
-        self.play()
-
-    def fetch_dirs(self, id):
-        dirs = self.browser.fetch(id)[0]
-
-        if len(dirs) > 0:
-            self.wm.dirs = (AppManager.format_dirs(dirs), self.on_click_dir,
-                            'No folders')
-            self.fetch_stations(dirs[0]['title'])
-
-    def fetch_stations(self, dir_name):
-        self.current_dir = dir_name
-        stations = self.browser.fetch(dir_name)[1]
-        self.wm.stations = (AppManager.format_stations(stations),
-                            self.on_click_station, 'No stations')
-
-    def play(self, _ev=None):
-        log.info('currently playing: %s', self.current_station)
-        media = self.instance.media_new(self.current_station['url'])
-        self.player.set_media(media)
-        self.player.play()
-
-    def stop(self, _ev=None):
-        self.player.stop()
-
-    def run(self):
-        self.app.run()
