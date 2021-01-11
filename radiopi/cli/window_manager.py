@@ -1,8 +1,8 @@
-from prompt_toolkit.layout.containers import HSplit, VSplit, Window, WindowAlign
+from prompt_toolkit.layout.containers import HSplit, VSplit, Window, WindowAlign, VerticalAlign
 from prompt_toolkit.layout.controls import FormattedTextControl
-from prompt_toolkit.formatted_text import FormattedText
+from prompt_toolkit.formatted_text import HTML
 from prompt_toolkit.layout.layout import Layout
-from prompt_toolkit.widgets import Box, Frame, VerticalLine, HorizontalLine
+from prompt_toolkit.widgets import VerticalLine, HorizontalLine
 from pyfiglet import Figlet
 from .selector_control import SelectorControl
 from ..log import Log
@@ -20,6 +20,7 @@ class WindowManager():
         self.folders = []
         self.stations = SelectorControl()
         self.index = 0
+        self.playing = 'No Playing'
 
     def append_folder(self, *folder_tuple):
         self.folders.append(SelectorControl(*folder_tuple))
@@ -41,7 +42,6 @@ class WindowManager():
 
     def _recreate_folders(self):
         self.folders = self.folders[:self.index + 1]
-        
 
     def _get_layout_folders(self):
         return flatten(
@@ -74,7 +74,7 @@ class WindowManager():
                 ] + self._get_layout_folders()),
                 VerticalLine(),
                 HSplit([
-                    WindowManager.player(),
+                    WindowManager.player(self.playing),
                     HorizontalLine(),
                     self.stations.radio_list,
                 ])
@@ -85,7 +85,7 @@ class WindowManager():
         f = Figlet(font='slant')
         return Window(content=FormattedTextControl(f.renderText('Radio-Pi')),
                       height=6,
-                      align=WindowAlign.LEFT)
+                      align=WindowAlign.CENTER)
 
     @staticmethod
     def legend():
@@ -94,10 +94,17 @@ class WindowManager():
                       align=WindowAlign.LEFT)
 
     @staticmethod
-    def player():
-        return Window(content=FormattedTextControl('player'),
+    def player(title='No Playing'):
+        return HSplit([
+            Window(content=FormattedTextControl(title),
+                   height=2,
+                   ignore_content_width=True,
+                   align=WindowAlign.CENTER)
+        ],
                       height=6,
-                      align=WindowAlign.LEFT)
+                      padding=2,
+                      align=VerticalAlign.CENTER,
+                      padding_char='~')
 
     @staticmethod
     def get_selector_layout(selector, message):

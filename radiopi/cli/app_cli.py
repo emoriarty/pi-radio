@@ -2,6 +2,7 @@ from os import path
 import vlc
 from prompt_toolkit.application import Application
 from prompt_toolkit.key_binding import KeyBindings
+from prompt_toolkit.formatted_text import HTML
 from ..browser import Browser
 from .window_manager import WindowManager
 from ..log import Log
@@ -70,10 +71,14 @@ class AppManager():
     def play(self, _ev=None):
         log.info('currently playing: %s', self.current_station)
         media = self.instance.media_new(self.current_station['url'])
+        self.wm.playing = HTML('<u>Playing</u>: ' + self.current_station['name'] )
+        self.app.layout = self.wm.layout
         self.player.set_media(media)
         self.player.play()
 
     def stop(self, _ev=None):
+        self.wm.playing = HTML('<u>Stopped</u>: ' + self.current_station['name'] )
+        self.app.layout = self.wm.layout
         self.player.stop()
 
     def run(self):
