@@ -65,7 +65,7 @@ class AppManager():
             self.wm.insert_folder(AppManager.format_dirs(dirs),
                                   self.on_click_folder)
         if len(stations) > 0:
-            self.wm.show_stations(AppManager.format_stations(stations),
+            self.wm.show_stations(dir_name, AppManager.format_stations(stations),
                                   self.on_click_station, 'No stations')
 
     def play(self, _ev=None):
