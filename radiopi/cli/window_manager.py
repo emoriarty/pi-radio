@@ -2,7 +2,7 @@ from prompt_toolkit.layout.containers import HSplit, VSplit, Window, WindowAlign
 from prompt_toolkit.layout.controls import FormattedTextControl
 from prompt_toolkit.formatted_text import HTML
 from prompt_toolkit.layout.layout import Layout
-from prompt_toolkit.widgets import VerticalLine, HorizontalLine
+from prompt_toolkit.widgets import VerticalLine, HorizontalLine, Frame
 from pyfiglet import Figlet
 from .selector_control import SelectorControl
 from ..log import Log
@@ -21,6 +21,7 @@ class WindowManager():
         self.stations = SelectorControl()
         self.index = 0
         self.playing = 'No Playing'
+        self.stations_folder = None
 
     def append_folder(self, *folder_tuple):
         self.folders.append(SelectorControl(*folder_tuple))
@@ -30,8 +31,10 @@ class WindowManager():
         self._recreate_folders()
         self.append_folder(*folder_tuple)
 
-    def show_stations(self, *station_tuple):
+    def show_stations(self, folder_name=None, *station_tuple):
+        log.debug('stations: %s', station_tuple)
         self.stations.props = station_tuple
+        self.stations_folder = folder_name
         self._recreate_folders()
         self._recreate_selectors()
 
@@ -75,8 +78,8 @@ class WindowManager():
                 VerticalLine(),
                 HSplit([
                     WindowManager.player(self.playing),
-                    HorizontalLine(),
-                    self.stations.radio_list,
+                    Frame(body=self.stations.radio_list,
+                          title=self.stations_folder)
                 ])
             ]))
 
