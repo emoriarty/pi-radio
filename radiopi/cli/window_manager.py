@@ -69,6 +69,10 @@ class WindowManager():
         return self.current_selector
 
     @property
+    def current(self):
+        return self.current_selector
+
+    @property
     def layout(self):
         return Layout(
             VSplit([

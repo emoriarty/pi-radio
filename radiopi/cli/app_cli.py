@@ -43,6 +43,9 @@ class AppManager():
     def prev_window(self, _ev=None):
         self.app.layout.focus(self.wm.prev)
 
+    def keep_window(self, _ev=None):
+        self.app.layout.focus(self.wm.current)
+
     def exit(self, _ev):
         self.app.exit()
 
@@ -73,6 +76,7 @@ class AppManager():
         media = self.instance.media_new(self.current_station['url'])
         self.wm.playing = HTML('<u>Playing</u>: ' + self.current_station['name'] )
         self.app.layout = self.wm.layout
+        self.keep_window()
         self.player.set_media(media)
         self.player.play()
 
