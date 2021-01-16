@@ -1,4 +1,4 @@
-from prompt_toolkit.layout.containers import HSplit, VSplit, Window, WindowAlign, VerticalAlign
+from prompt_toolkit.layout.containers import HSplit, VSplit, Window, WindowAlign, VerticalAlign, FloatContainer, Float
 from prompt_toolkit.layout.controls import FormattedTextControl
 from prompt_toolkit.formatted_text import HTML
 from prompt_toolkit.layout.layout import Layout
@@ -22,6 +22,7 @@ class WindowManager():
         self.index = 0
         self.playing = 'No Playing'
         self.stations_folder = None
+        self.dialog = None
 
     def append_folder(self, *folder_tuple):
         self.folders.append(SelectorControl(*folder_tuple))
@@ -37,6 +38,12 @@ class WindowManager():
         self.stations_folder = folder_name
         self._recreate_folders()
         self._recreate_selectors()
+
+    def show_dialog(self, dialog):
+        self.dialog = Float(content=dialog)
+
+    def hide_dialog(self):
+        self.dialog = None
 
     def _recreate_selectors(self):
         self.selectors = self.folders.copy()
@@ -56,26 +63,34 @@ class WindowManager():
 
     @property
     def current_selector(self):
+        if self.dialog != None:
+            return self.dialog
         return self.selectors[self.index].radio_list
 
     @property
     def next(self):
+        if self.dialog != None:
+            return self.dialog
         self.index = (self.index + 1) % self.count
         return self.current_selector
 
     @property
     def prev(self):
+        if self.dialog != None:
+            return self.dialog
         self.index = (self.index - 1) % self.count
         return self.current_selector
 
     @property
     def current(self):
+        if self.dialog != None:
+            return self.dialog.content
         return self.current_selector
 
     @property
     def layout(self):
         return Layout(
-            VSplit([
+            FloatContainer(content=VSplit([
                 HSplit([
                     WindowManager.header(),
                 ] + self._get_layout_folders()),
@@ -85,7 +100,11 @@ class WindowManager():
                     Frame(body=self.stations.radio_list,
                           title=self.stations_folder)
                 ])
-            ]))
+            ]), floats=[self.dialog] if self.dialog else []))
+
+    @property
+    def is_dialog_active(self):
+        return self.dialog != None
 
     @staticmethod
     def header():

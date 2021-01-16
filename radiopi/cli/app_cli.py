@@ -3,10 +3,15 @@ import vlc
 from prompt_toolkit.application import Application
 from prompt_toolkit.key_binding import KeyBindings
 from prompt_toolkit.formatted_text import HTML
+from prompt_toolkit.shortcuts import radiolist_dialog
+from prompt_toolkit.widgets import Dialog, Button
+from prompt_toolkit.filters import Condition
 from ..browser import Browser
 from .window_manager import WindowManager
 from ..log import Log
 from ..settings import CONFIG_PATH
+from .radio_list import RadioList
+from ..my_stations import get_lists, save_station, get_stations
 
 log = Log('cli.log').logging
 vlc_log = path.join(CONFIG_PATH, 'vlc.log')
@@ -14,17 +19,23 @@ vlc_log = path.join(CONFIG_PATH, 'vlc.log')
 
 class AppManager():
     def __init__(self):
-        kb = KeyBindings()
-        kb.add('tab')(self.next_window)
-        kb.add('s-tab')(self.prev_window)
-        kb.add('c-q')(self.exit)
-        kb.add('c-p')(self.play)
-        kb.add('c-s')(self.stop)
-
         self.browser = Browser()
         self.wm = WindowManager()
         self.current_dir = None
         self.current_station = None
+
+        @Condition
+        def is_not_dialog_active():
+            return not self.wm.is_dialog_active
+
+        kb = KeyBindings()
+        kb.add('tab', filter=is_not_dialog_active)(self.next_window)
+        kb.add('s-tab', filter=is_not_dialog_active)(self.prev_window)
+        kb.add('c-q', filter=is_not_dialog_active)(self.exit)
+        kb.add('escape')(self.close_dialog)
+        kb.add('c-p')(self.play)
+        kb.add('c-s')(self.stop)
+        kb.add('c-l', filter=is_not_dialog_active)(self.add_to_list)
 
         root = AppManager.format_dirs(self.browser.fetch()[0])
         self.wm.append_folder(root, self.on_click_folder, 'No lists')
@@ -68,25 +79,61 @@ class AppManager():
             self.wm.insert_folder(AppManager.format_dirs(dirs),
                                   self.on_click_folder)
         if len(stations) > 0:
-            self.wm.show_stations(dir_name, AppManager.format_stations(stations),
+            self.wm.show_stations(dir_name,
+                                  AppManager.format_stations(stations),
                                   self.on_click_station, 'No stations')
 
     def play(self, _ev=None):
         log.info('currently playing: %s', self.current_station)
         media = self.instance.media_new(self.current_station['url'])
-        self.wm.playing = HTML('<u>Playing</u>: ' + self.current_station['name'] )
+        self.wm.playing = HTML('<u>Playing</u>: ' +
+                               self.current_station['name'])
         self.app.layout = self.wm.layout
         self.keep_window()
         self.player.set_media(media)
         self.player.play()
 
     def stop(self, _ev=None):
-        self.wm.playing = HTML('<u>Stopped</u>: ' + self.current_station['name'] )
+        self.wm.playing = HTML('<u>Stopped</u>: ' +
+                               self.current_station['name'])
         self.app.layout = self.wm.layout
         self.player.stop()
 
+    def add_to_list(self, _ev=None):
+        if self.current_station:
+
+            def select_list(st_list):
+                stations = list(map(lambda st: st[0], get_stations(st_list)))
+
+                if self.current_station['name'] in stations:
+                    log.info('%s station already in %s\'s list',
+                             self.current_station['name'], st_list)
+                else:
+                    log.info('save %s in %s\'s list',
+                             self.current_station['name'], st_list)
+                    save_station(st_list, str(self.current_station['name']),
+                                 str(self.current_station['url']))
+                    self.close_dialog()
+
+            radio_list = RadioList(values=list(
+                map(lambda i: (i, i), get_lists())),
+                                   handler=select_list)
+
+            dialog = Dialog(
+                title="Add to list",
+                body=radio_list,
+            )
+            self.wm.show_dialog(dialog)
+            self.app.layout = self.wm.layout
+            self.keep_window()
+
     def run(self):
         self.app.run()
+
+    def close_dialog(self, _ev=None):
+        self.wm.hide_dialog()
+        self.app.layout = self.wm.layout
+        self.keep_window()
 
     @staticmethod
     def format_dirs(dirs):
