@@ -1,10 +1,11 @@
 from os import path
 import vlc
 from prompt_toolkit.application import Application
+from prompt_toolkit.layout.containers import HSplit
 from prompt_toolkit.key_binding import KeyBindings
 from prompt_toolkit.formatted_text import HTML
 from prompt_toolkit.shortcuts import radiolist_dialog
-from prompt_toolkit.widgets import Dialog, Button
+from prompt_toolkit.widgets import Dialog, TextArea
 from prompt_toolkit.filters import Condition
 from ..browser import Browser
 from .window_manager import WindowManager
@@ -113,16 +114,22 @@ class AppManager():
                              self.current_station['name'], st_list)
                     save_station(st_list, str(self.current_station['name']),
                                  str(self.current_station['url']))
-                    self.close_dialog()
+                self.close_dialog()
+
+            def new_list(buffer):
+                log.info('new list: %s', buffer.text)
+                select_list(buffer.text)
 
             radio_list = RadioList(values=list(
                 map(lambda i: (i, i), get_lists())),
                                    handler=select_list)
 
-            dialog = Dialog(
-                title="Add to list",
-                body=radio_list,
-            )
+            text_input = TextArea(multiline=False, accept_handler=new_list)
+
+            dialog = Dialog(title="Add to list",
+                            body=HSplit([text_input, radio_list], padding=1),
+                            width=40,
+                            with_background=True)
             self.wm.show_dialog(dialog)
             self.app.layout = self.wm.layout
             self.keep_window()
