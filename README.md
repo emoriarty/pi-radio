@@ -33,6 +33,13 @@ WantedBy=multi-user.target
 * [Manging systemd](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
 
 ## Settings
+
+### ENV variables
+
+Create a `.env` in the project root folder to set environment variables decribed below.
+
+* `YCAST_HOST`: ycast url set in systemd service
+
 ### PYTHONPATH
 
 Append project's path to `$PYTHONPATH` varibale to make radiopi module available for python.
