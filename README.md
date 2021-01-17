@@ -1,4 +1,5 @@
-Radiopi is a personal project meant to transform a raspberry in a internet radio. It can also be used on mac. 
+Radiopi is a personal project meant to transform a raspberry into an Internet radio.
+It can also be used on any Linux or Mac OS.
 
 ## System resources
 
