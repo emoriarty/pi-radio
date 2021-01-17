@@ -45,6 +45,22 @@ Create a `.env` in the project root folder to set environment variables decribed
 
 Append project's path to `$PYTHONPATH` varibale to make radiopi module available for python.
 
+Once restarted the terminal, radiopi can be executed from anywhere.
+
+```shell
+$ python3 -m radiopi
+```
+
+### Executable
+
+In order to run the executable `radiopi`, append in the `$PATH` variable the project directory path.
+
+After restarting the terminal, radiopi command will be available.
+
+```shell
+$ radiopi
+```
+
 ### My stations
 
 Stations list are stored in a file named `stations.yml`. This file must reside in config folder placed in `$HOME/.config/radiopi`.
