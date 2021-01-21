@@ -3,6 +3,7 @@ It can also be used on any Linux or Mac OS.
 
 ## System resources
 
+* python 3.7
 * vlc (system)
 * ycast
 
