@@ -1,5 +1,5 @@
 from prompt_toolkit.widgets import RadioList as BaseRadioList
-from ..log import Log
+from .log import Log
 
 __all__ = ["RadioList"]
 

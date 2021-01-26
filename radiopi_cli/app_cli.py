@@ -7,12 +7,11 @@ from prompt_toolkit.formatted_text import HTML
 from prompt_toolkit.shortcuts import radiolist_dialog
 from prompt_toolkit.widgets import Dialog, TextArea
 from prompt_toolkit.filters import Condition
-from ..browser import Browser
+from radiopi import Browser, get_lists, save_station, get_stations
 from .window_manager import WindowManager
-from ..log import Log
-from ..settings import CONFIG_PATH
+from .log import Log
+from .settings import CONFIG_PATH
 from .radio_list import RadioList
-from ..my_stations import get_lists, save_station, get_stations
 
 log = Log('cli.log').logging
 vlc_log = path.join(CONFIG_PATH, 'vlc.log')
