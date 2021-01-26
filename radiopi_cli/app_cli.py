@@ -95,6 +95,7 @@ class AppManager():
         self.wm.playing = HTML('<u>Stopped</u>: ' +
                                self.current_station['name'])
         self.app.layout = self.wm.layout
+        self.keep_window()
         self.player.stop()
 
     def add_to_list(self, _ev=None):
