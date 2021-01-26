@@ -4,8 +4,8 @@ from prompt_toolkit.formatted_text import HTML
 from prompt_toolkit.layout.layout import Layout
 from prompt_toolkit.widgets import VerticalLine, HorizontalLine, Frame
 from pyfiglet import Figlet
+from radiopi import Log
 from .selector_control import SelectorControl
-from .log import Log
 
 log = Log('cli.log').logging
 

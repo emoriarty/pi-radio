@@ -2,7 +2,7 @@ from .radio_list import RadioList
 from prompt_toolkit.layout.containers import Window, WindowAlign
 from prompt_toolkit.layout.controls import FormattedTextControl
 from prompt_toolkit.widgets import Box
-from .log import Log
+from radiopi import Log
 
 log = Log('cli.log').logging
 
