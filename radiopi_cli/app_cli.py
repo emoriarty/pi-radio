@@ -7,7 +7,7 @@ from prompt_toolkit.formatted_text import HTML
 from prompt_toolkit.shortcuts import radiolist_dialog
 from prompt_toolkit.widgets import Dialog, TextArea
 from prompt_toolkit.filters import Condition
-from radiopi import Browser, get_lists, save_station, get_stations
+from radiopi import Browser, MyStations
 from .window_manager import WindowManager
 from .log import Log
 from .settings import CONFIG_PATH
@@ -103,7 +103,7 @@ class AppManager():
         if self.current_station:
 
             def select_list(st_list):
-                stations = list(map(lambda st: st[0], get_stations(st_list)))
+                stations = list(map(lambda st: st[0], MyStations.get_stations(st_list)))
 
                 if self.current_station['name'] in stations:
                     log.info('%s station already in %s\'s list',
@@ -111,7 +111,7 @@ class AppManager():
                 else:
                     log.info('save %s in %s\'s list',
                              self.current_station['name'], st_list)
-                    save_station(st_list, str(self.current_station['name']),
+                    MyStations.save_station(st_list, str(self.current_station['name']),
                                  str(self.current_station['url']))
                 self.close_dialog()
 
@@ -120,7 +120,7 @@ class AppManager():
                 select_list(buffer.text)
 
             radio_list = RadioList(values=list(
-                map(lambda i: (i, i), get_lists())),
+                map(lambda i: (i, i), MyStations.get_lists())),
                                    handler=select_list)
 
             text_input = TextArea(multiline=False, accept_handler=new_list)
