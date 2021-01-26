@@ -7,10 +7,8 @@ from prompt_toolkit.formatted_text import HTML
 from prompt_toolkit.shortcuts import radiolist_dialog
 from prompt_toolkit.widgets import Dialog, TextArea
 from prompt_toolkit.filters import Condition
-from radiopi import Browser, MyStations
+from radiopi import Browser, MyStations, CONFIG_PATH, Log
 from .window_manager import WindowManager
-from .log import Log
-from .settings import CONFIG_PATH
 from .radio_list import RadioList
 
 log = Log('cli.log').logging

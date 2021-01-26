@@ -1,6 +1,6 @@
 import logging
 import os
-from .settings import CONFIG_PATH
+from radiopi import CONFIG_PATH
 
 
 class Log():
