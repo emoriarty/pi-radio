@@ -42,7 +42,7 @@ class AppManager():
                                key_bindings=kb)
         self.instance = vlc.Instance('--input-repeat=-1', '--fullscreen',
                                      '--quiet', '--file-logging',
-                                     f'--logfile={vlc_log}', '--logmode=text',
+                                     '--logfile={vlc_log}', '--logmode=text',
                                      '--log-verbose=3')
         self.player = self.instance.media_player_new()
 
