@@ -3,15 +3,56 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-
-    <title>RadioPi Web</title>
     <meta name="description" content="RadioPi Web App" />
     <meta name="author" content="Enrique Arias" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <script type="module" src="/static/scripts/hello.js"></script>
+    <title>RadioPi Web</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script type="module" src="./scripts/radio-browser-components.js"></script>
+    <script>
+      function attachListeners() {
+        console.log("attaching listeners");
+        document.querySelectorAll("station-card").forEach((item) => {
+          console.log(item);
+          item.addEventListener("on-play", (ev) => {
+            console.log(ev);
+          });
+        });
+      }
+    </script>
   </head>
 
-  <body>
-    <hello-world></hello-world>
+  <body onload="attachListeners()">
+    <div class="w3-sidebar w3-bar-block" style="width: 25%">
+      <radio-sidebar />
+    </div>
+    <div style="margin-left: 25%">
+      <h2>Popular radio stations in your area</h2>
+      <ul>
+        <li>
+          <station-card
+            img="https://cdn.radiofrance.fr/s3/cruiser-production/2017/06/d1d4a0e0-282f-434a-879d-9075905e12f9/200x200_fmwebradiosnormalplus.jpg"
+            title="Radio France Musique"
+            onplay="console.log('jola 0');"
+          />
+        </li>
+        <li>
+          <station-card
+            img="http://db.radioline.fr/pictures/radio_98bf4bff08df55fe5c5a0b77b616f415/logo200.jpg?size=200"
+            title="Jazz Music Only Women"
+            onclick="console.log('jola 1');"
+          />
+        </li>
+        <li>
+          <station-card
+            img="http://static.radio.fr/images/broadcasts/b1/97/1441/1/c300.png"
+            title="BFM Business"
+            onclick="console.log('jola 2');"
+          />
+        </li>
+      </ul>
+    </div>
   </body>
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="RadioPi Web App" />
+    <meta name="author" content="Enrique Arias" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>RadioPi Web - Components</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script>
+        let iframe;
+
+        function attachListeners() {
+            iframe = document.getElementById('demo');
+            document.querySelectorAll('.components > li > a').forEach(element => {
+              element.addEventListener('click', showComponent);
+            });
+        }
+
+        function showComponent(ev) {
+          ev.preventDefault();
+          iframe.src = ev.target.href;
+        }
+    </script>
+    <style>
+      main {
+        height: 100vh;
+      }
+      #sidebar {
+        border-right: 1px solid gray;
+      }
+      #demo {
+        border: 0;
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body onload="attachListeners()">
+    <div id="sidebar" class="w3-sidebar w3-bar-block w3-container" style="width: 25%">
+        <ul class="components">
+            <li><a href="/components/station-card.html">&lt;station-card /&gt;</a></li>
+            <li><a href="/components/horizontal-list.html">&lt;horizontal-list /&gt;</a></li>
+        </ul>
+    </div>
+    <main class="w3-container" style="margin-left: 25%">
+      <iframe id="demo">
+      </iframe>
+    </main>
+  </body>
+</html>
