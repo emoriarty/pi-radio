@@ -4,7 +4,6 @@ export class HorizontalList extends LitElement {
   static get styles() {
     return css`
       :host {
-        height: 200px;
         overflow-x: scroll;
         overflow-y: hidden;
         display: block;

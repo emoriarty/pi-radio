@@ -10,10 +10,6 @@ export class StationCard extends LitElement {
 
   static get styles() {
     return css`
-      .card {
-        max-width: 162px;
-      }
-
       .container {
         padding: 0.5rem;
       }
