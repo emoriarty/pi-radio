@@ -5,6 +5,8 @@ export class StationCard extends LitElement {
     return {
       img: { type: String },
       title: { type: String },
+      src: { type: String },
+      playing: { type: Boolean },
     };
   }
 
@@ -37,60 +39,55 @@ export class StationCard extends LitElement {
         z-index: 2;
       }
 
-      .overlay:hover .play {
+      .overlay:hover .play,
+      .overlay:hover .stop {
         cursor: pointer;
         opacity: 1;
       }
 
-      .play {
-        bottom: 0.5rem;
+      .play,
+      .stop {
+        bottom: 5%;
         opacity: 0;
         position: absolute;
-        right: 0.5rem;
+        right: 5%;
         transition: opacity 0.2s;
+        height: 28.5%;
+        width: 28.5%;
       }
     `;
   }
 
-  _handlePlay(ev) {
+  constructor() {
+    super();
+    this.playing = false;
+  }
+
+  handlePlay(ev) {
     ev.preventDefault();
     ev.stopPropagation();
     console.log("play");
-    let event = new CustomEvent("on-play", {
+    let event = new CustomEvent("on-station-play", {
       detail: {
-        message: "Something important happened",
+        radio: "Something important happened",
       },
       bubbles: true,
       composed: true,
     });
-    this.dispatchEvent(event);
+    ev.target.dispatchEvent(event);
   }
 
-  _handleClick(e) {
-    console.log("click");
-  }
   render() {
     return html`
       <div class="card overlay-wrapper">
         <header class="overlay">
-          <img src="${this.img}" />
-          <svg
-            width="28.5%"
-            height="28.5%"
-            viewBox="0 0 45 45"
-            class="play"
-            role="button"
-            @click="${this._handlePlay}"
-          >
-            <path
-              fill="#1c203c"
-              d="M22.5 45a22.5 22.5 0 100-45 22.5 22.5 0 000 45z"
-            ></path>
-            <path
-              d="M17.5 31.6c0 .3.2.7.5.8.3.2.7.1 1 0l11.5-9.2a.9.9 0 000-1.4L19 12.7a1 1 0 00-1-.1 1 1 0 00-.5.8v18.2z"
-              fill="#FFF"
-            ></path>
-          </svg>
+          <img
+            src="${this.img ||
+            "https://play-lh.googleusercontent.com/aK5fbCH6BSJJCh--y6ZGnQ8uRFmb8B0Z8QxaLGERjOljHJ0S-bTw0k9SQ2eHy9jSzPA"}"
+          />
+          ${this.playing
+            ? html` <stop-icon class="stop" /> `
+            : html` <play-icon class="play" /> `}
         </header>
 
         <div class="container">

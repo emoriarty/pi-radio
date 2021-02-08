@@ -11,21 +11,9 @@
     <title>RadioPi Web - Components</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <script type="module" src="../scripts/radio-browser-components.js"></script>
-    <script>
-      function load() {
-        document
-          .querySelector("station-card")
-          .addEventListener("on-station-play", function (ev) {
-            console.log(ev);
-          });
-      }
-    </script>
   </head>
 
-  <body onload="load()">
-    <station-card
-      img="https://cdn.radiofrance.fr/s3/cruiser-production/2017/06/d1d4a0e0-282f-434a-879d-9075905e12f9/200x200_fmwebradiosnormalplus.jpg"
-      title="Radio France Musique"
-    />
+  <body>
+    <popular-stations-horizontal-list />
   </body>
 </html>

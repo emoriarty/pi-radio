@@ -15,7 +15,7 @@ export class StationsHorizontalList extends LitElement {
         <station-card
           img="https://cdn.radiofrance.fr/s3/cruiser-production/2017/06/d1d4a0e0-282f-434a-879d-9075905e12f9/200x200_fmwebradiosnormalplus.jpg"
           title="Radio France Musique"
-          onplay="console.log('jola 0');"
+          onclick="console.log('jola 0');"
         ></station-card>
         <station-card
           img="http://db.radioline.fr/pictures/radio_98bf4bff08df55fe5c5a0b77b616f415/logo200.jpg?size=200"
