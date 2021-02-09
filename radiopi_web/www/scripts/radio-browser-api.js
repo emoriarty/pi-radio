@@ -1,15 +1,9 @@
 import RadioBrowser from "https://jspm.dev/radio-browser";
 
 export function fetchPopularStationsByCountry(country, count = 10) {
-  const filter = {
-    by: "country",
-    searchterm: country.toLocaleLowerCase(),
-    limit: count,
-  };
-
-  return RadioBrowser.getStations(filter)
+  return fetchStationsByCountry(country)
     .then((data) => {
-      const stations = data.sort(byMostPopular());
+      const stations = data.sort(byMostPopular()).slice(0, count);
       console.log(`Most popular in ${country}`);
       console.log(stations);
       return stations;
@@ -18,20 +12,23 @@ export function fetchPopularStationsByCountry(country, count = 10) {
 }
 
 export function fetchMostVotedStationsByCountry(country, count = 10) {
-  const filter = {
-    by: "country",
-    searchterm: country.toLocaleLowerCase(),
-    limit: count,
-  };
-
-  return RadioBrowser.getStations(filter)
+  return fetchStationsByCountry(country)
     .then((data) => {
-      const stations = data.sort(byMostVoted());
+      const stations = data.sort(byMostVoted()).slice(0, count);
       console.log(`Most voted in ${country}`);
       console.log(stations);
       return stations;
     })
     .catch((err) => console.error(err));
+}
+
+export function fetchStationsByCountry(country) {
+  const filter = {
+    by: "country",
+    searchterm: country.toLocaleLowerCase(),
+  };
+
+  return RadioBrowser.getStations(filter).catch((err) => console.error(err));
 }
 
 export function fetchCountryFromCurrentLocation() {
