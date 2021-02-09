@@ -66,7 +66,7 @@ export class PopularStationsHorizontalList extends LitElement {
   updated(changedProperties) {
     changedProperties.forEach((_, propName) => {
       if (propName == "countryCode") {
-        fetchPopularStationsByCountry(this.countryCode).then((data) => {
+        fetchPopularStationsByCountry(this.country).then((data) => {
           this.stations = data;
         });
       }
