@@ -15,7 +15,7 @@ export class HorizontalList extends LitElement {
       }
 
       ::slotted(*) {
-        display: inline-block;
+        display: inline-table;
       }
     `;
   }

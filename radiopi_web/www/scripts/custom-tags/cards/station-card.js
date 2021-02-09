@@ -12,13 +12,9 @@ export class StationCard extends LitElement {
 
   static get styles() {
     return css`
-      .container {
+      .body {
         padding: 0.5rem;
-      }
-
-      img {
-        display: block;
-        width: 100%;
+        white-space: normal;
       }
 
       h4 {
@@ -29,6 +25,7 @@ export class StationCard extends LitElement {
       header {
         position: relative;
       }
+
       .overlay img {
         transition: opacity 0.2s;
       }
@@ -54,6 +51,22 @@ export class StationCard extends LitElement {
         transition: opacity 0.2s;
         height: 28.5%;
         width: 28.5%;
+        z-index: 10;
+      }
+
+      .img {
+        width: 100%;
+        padding-top: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: block;
       }
     `;
   }
@@ -81,16 +94,18 @@ export class StationCard extends LitElement {
     return html`
       <div class="card overlay-wrapper">
         <header class="overlay">
-          <img
-            src="${this.img ||
-            "https://play-lh.googleusercontent.com/aK5fbCH6BSJJCh--y6ZGnQ8uRFmb8B0Z8QxaLGERjOljHJ0S-bTw0k9SQ2eHy9jSzPA"}"
-          />
+          <div class="img">
+            <img
+              src="${this.img ||
+              "https://play-lh.googleusercontent.com/aK5fbCH6BSJJCh--y6ZGnQ8uRFmb8B0Z8QxaLGERjOljHJ0S-bTw0k9SQ2eHy9jSzPA"}"
+            />
+          </div>
           ${this.playing
             ? html` <stop-icon class="stop" /> `
             : html` <play-icon class="play" /> `}
         </header>
 
-        <div class="container">
+        <div class="body">
           <h4>${this.title}</h4>
         </div>
       </div>
