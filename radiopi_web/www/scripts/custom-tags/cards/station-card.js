@@ -26,6 +26,10 @@ export class StationCard extends LitElement {
         position: relative;
       }
 
+      .playing .overlay img {
+        opacity: 0.7;
+      }
+
       .overlay img {
         transition: opacity 0.2s;
       }
@@ -42,10 +46,13 @@ export class StationCard extends LitElement {
         opacity: 1;
       }
 
+      .play {
+        opacity: 0;
+      }
+
       .play,
       .stop {
         bottom: 5%;
-        opacity: 0;
         position: absolute;
         right: 5%;
         transition: opacity 0.2s;
@@ -107,7 +114,7 @@ export class StationCard extends LitElement {
   render() {
     console.log(this.title, this.playing);
     return html`
-      <div class="card overlay-wrapper">
+      <div class="card overlay-wrapper ${this.playing ? "playing" : ""}">
         <header class="overlay">
           <div class="img">
             <img
