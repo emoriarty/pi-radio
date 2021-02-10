@@ -80,9 +80,23 @@ export class StationCard extends LitElement {
     ev.preventDefault();
     ev.stopPropagation();
     console.log("play");
-    let event = new CustomEvent("on-station-play", {
+    let event = new CustomEvent("play-station", {
       detail: {
-        radio: "Something important happened",
+        id: this.id,
+      },
+      bubbles: true,
+      composed: true,
+    });
+    ev.target.dispatchEvent(event);
+  }
+
+  handleStop(ev) {
+    ev.preventDefault();
+    ev.stopPropagation();
+    console.log("stop");
+    let event = new CustomEvent("stop-station", {
+      detail: {
+        id: this.id,
       },
       bubbles: true,
       composed: true,
@@ -91,6 +105,7 @@ export class StationCard extends LitElement {
   }
 
   render() {
+    console.log(this.title, this.playing);
     return html`
       <div class="card overlay-wrapper">
         <header class="overlay">
@@ -101,8 +116,20 @@ export class StationCard extends LitElement {
             />
           </div>
           ${this.playing
-            ? html` <stop-icon class="stop" /> `
-            : html` <play-icon class="play" /> `}
+            ? html`
+                <stop-icon
+                  class="stop"
+                  role="button"
+                  @click="${this.handleStop}"
+                />
+              `
+            : html`
+                <play-icon
+                  class="play"
+                  role="button"
+                  @click="${this.handlePlay}"
+                />
+              `}
         </header>
 
         <div class="body">

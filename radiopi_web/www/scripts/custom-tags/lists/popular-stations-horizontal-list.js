@@ -10,6 +10,7 @@ export class PopularStationsHorizontalList extends LitElement {
       country: { type: String },
       countryCode: { type: String },
       stations: { type: Array },
+      playingStationId: {},
     };
   }
 
@@ -24,9 +25,23 @@ export class PopularStationsHorizontalList extends LitElement {
   constructor() {
     super();
     this.stations = [];
+    this.audio = null;
     this.renderStation = this.renderStation.bind(this);
-    this.addEventListener("on-station-play", function (ev) {
-      this.stations.find((station) => station.changeuuid == ev.target.id);
+    this.addEventListener("play-station", function (ev) {
+      console.log(ev);
+      const currentStation = this.stations.find(
+        (station) => station.changeuuid == ev.detail.id
+      );
+      currentStation && (this.playingStationId = currentStation.changeuuid);
+      this.audio && this.audio.pause()
+      this.audio = new Audio(currentStation.url);
+      this.audio.play();
+    });
+    this.addEventListener("stop-station", function (ev) {
+      console.log(ev);
+      this.playingStationId = null;
+      this.audio.pause();
+      this.audio = null;
     });
   }
 
@@ -59,6 +74,7 @@ export class PopularStationsHorizontalList extends LitElement {
         img="${station.favicon}"
         title="${station.name}"
         id="${station.changeuuid}"
+        ?playing="${station.changeuuid === this.playingStationId}"
       ></station-card>
     `;
   }
