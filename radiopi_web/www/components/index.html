@@ -11,19 +11,19 @@
     <title>RadioPi Web - Components</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <script>
-        let iframe;
+      let iframe;
 
-        function attachListeners() {
-            iframe = document.getElementById('demo');
-            document.querySelectorAll('.components > li > a').forEach(element => {
-              element.addEventListener('click', showComponent);
-            });
-        }
+      function attachListeners() {
+        iframe = document.getElementById("demo");
+        document.querySelectorAll(".components > li > a").forEach((element) => {
+          element.addEventListener("click", showComponent);
+        });
+      }
 
-        function showComponent(ev) {
-          ev.preventDefault();
-          iframe.src = ev.target.href;
-        }
+      function showComponent(ev) {
+        ev.preventDefault();
+        iframe.src = ev.target.href;
+      }
     </script>
     <style>
       main {
@@ -42,17 +42,34 @@
   </head>
 
   <body onload="attachListeners()">
-    <div id="sidebar" class="w3-sidebar w3-bar-block w3-container" style="width: 350px">
-        <ul class="components">
-            <li><a href="/components/station-card.html">&lt;station-card /&gt;</a></li>
-            <li><a href="/components/horizontal-list.html">&lt;horizontal-list /&gt;</a></li>
-            <li><a href="/components/stations-horizontal-list.html">&lt;stations-horizontal-list /&gt;</a></li>
-            <li><a href="/components/popular-stations-horizontal-list.html">&lt;popular-stations-horizontal-list /&gt;</a></li>
-        </ul>
+    <div
+      id="sidebar"
+      class="w3-sidebar w3-bar-block w3-container"
+      style="width: 350px"
+    >
+      <ul class="components">
+        <li>
+          <a href="/components/station-card.html">&lt;station-card /&gt;</a>
+        </li>
+        <li>
+          <a href="/components/horizontal-list.html"
+            >&lt;horizontal-list /&gt;</a
+          >
+        </li>
+        <li>
+          <a href="/components/popular-stations-horizontal-list.html"
+            >&lt;popular-stations-horizontal-list /&gt;</a
+          >
+        </li>
+        <li>
+          <a href="/components/highest-rated-stations-horizontal-list.html"
+            >&lt;highest-rated-stations-horizontal-list /&gt;</a
+          >
+        </li>
+      </ul>
     </div>
-    <main class="w3-container" style="margin-left: 350px;">
-      <iframe id="demo">
-      </iframe>
+    <main class="w3-container" style="margin-left: 350px">
+      <iframe id="demo"> </iframe>
     </main>
   </body>
 </html>

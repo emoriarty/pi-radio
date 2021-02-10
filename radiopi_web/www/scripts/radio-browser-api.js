@@ -11,10 +11,10 @@ export function fetchPopularStationsByCountry(country, count = 10) {
     .catch((err) => console.error(err));
 }
 
-export function fetchMostVotedStationsByCountry(country, count = 10) {
+export function fetchHighestRatedStationsByCountry(country, count = 10) {
   return fetchStationsByCountry(country)
     .then((data) => {
-      const stations = data.sort(byMostVoted()).slice(0, count);
+      const stations = data.sort(byHighestRated()).slice(0, count);
       console.log(`Most voted in ${country}`);
       console.log(stations);
       return stations;
@@ -46,16 +46,17 @@ export function fetchCountryFromCurrentLocation() {
 }
 
 // Filters
-function byMostVoted() {
-  return sortBy("votes");
+function byHighestRated() {
+  return sortBy("votes", false);
 }
 
-function byMostPopular(prop) {
-  return sortBy("clicktrend");
+function byMostPopular() {
+  return sortBy("clicktrend", false);
 }
 
-function sortBy(prop) {
+function sortBy(prop, asc = true) {
   return function (a, b) {
-    return a[prop] > b[prop] ? 1 : b[prop] > a[prop] ? -1 : 0;
+    if (asc) return a[prop] > b[prop] ? 1 : b[prop] > a[prop] ? -1 : 0;
+    return a[prop] < b[prop] ? 1 : b[prop] < a[prop] ? -1 : 0;
   };
 }
