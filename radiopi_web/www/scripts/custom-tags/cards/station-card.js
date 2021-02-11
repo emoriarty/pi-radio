@@ -20,6 +20,8 @@ export class StationCard extends LitElement {
       h4 {
         margin-top: 0;
         margin-bottom: 0.5rem;
+        font-weight: var(--font-weight);
+        font-family: var(--font-family);
       }
 
       header {
@@ -112,7 +114,6 @@ export class StationCard extends LitElement {
   }
 
   render() {
-    console.log(this.title, this.playing);
     return html`
       <div class="card overlay-wrapper ${this.playing ? "playing" : ""}">
         <header class="overlay">

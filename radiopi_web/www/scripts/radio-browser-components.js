@@ -13,8 +13,6 @@ const RadioBrowserComponents = {
   HorizontalList,
   StationsHorizontalList,
   PopularStationsHorizontalList,
-  PlayIcon,
-  StopIcon,
   HighestRatedStationsHorizontalList,
 };
 export { RadioBrowserComponents };

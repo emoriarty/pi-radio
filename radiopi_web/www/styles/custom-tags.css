@@ -1,0 +1,13 @@
+:root {
+  --body-font-size: 15px;
+  --body-font-weight: 400;
+  --heading-font-family: "Segoe UI", Arial, sans-serif;
+  --heading-font-weight: 400;
+}
+
+popular-stations-horizontal-list,
+highest-rated-stations-horizontal-list,
+station-card {
+  --font-weight: var(--heading-font-weight);
+  --font-family: var(--heading-font-family);
+}

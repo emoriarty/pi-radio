@@ -14,8 +14,29 @@ export class AbstractStationsHorizontalList extends LitElement {
 
   static get styles() {
     return css`
+      :host {
+        display: block;
+        font-weight: 400;
+      }
+
+      h2 {
+        margin: 10px 0;
+        padding: 0 16px;
+        font-size: 30px;
+        font-weight: var(--font-size);
+        font-family: var(--font-family);
+      }
+
       station-card {
         width: 16.6667%;
+      }
+
+      station-card:first-child {
+        padding-left: 16px;
+      }
+
+      station-card:last-child {
+        padding-right: 16px;
       }
     `;
   }
@@ -52,7 +73,7 @@ export class AbstractStationsHorizontalList extends LitElement {
 
   render() {
     return html`
-      <h2>${this.title}</h2>
+      <h2 part="title">${this.title}</h2>
       <horizontal-list>
         ${this.stations.map(this.renderStation)}
       </horizontal-list>

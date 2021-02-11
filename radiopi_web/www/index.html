@@ -10,6 +10,7 @@
 
     <title>RadioPi Web</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="./styles/custom-tags.css" />
     <script type="module" src="./scripts/radio-browser-components.js"></script>
     <script>
       function attachListeners() {
@@ -29,30 +30,8 @@
       <radio-sidebar />
     </div>
     <div style="margin-left: 25%">
-      <h2>Popular radio stations in your area</h2>
-      <ul>
-        <li>
-          <station-card
-            img="https://cdn.radiofrance.fr/s3/cruiser-production/2017/06/d1d4a0e0-282f-434a-879d-9075905e12f9/200x200_fmwebradiosnormalplus.jpg"
-            title="Radio France Musique"
-            onplay="console.log('jola 0');"
-          />
-        </li>
-        <li>
-          <station-card
-            img="http://db.radioline.fr/pictures/radio_98bf4bff08df55fe5c5a0b77b616f415/logo200.jpg?size=200"
-            title="Jazz Music Only Women"
-            onclick="console.log('jola 1');"
-          />
-        </li>
-        <li>
-          <station-card
-            img="http://static.radio.fr/images/broadcasts/b1/97/1441/1/c300.png"
-            title="BFM Business"
-            onclick="console.log('jola 2');"
-          />
-        </li>
-      </ul>
+      <popular-stations-horizontal-list></popular-stations-horizontal-list>
+      <highest-rated-stations-horizontal-list></highest-rated-stations-horizontal-list>
     </div>
   </body>
 </html>
