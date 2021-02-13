@@ -1,57 +1,73 @@
 import { LitElement, html, css } from "https://jspm.dev/lit-element@2";
-import RadioBrowser from "https://jspm.dev/radio-browser"
 
 export class RadioSidebar extends LitElement {
   static get styles() {
     return css`
-      .greeting {
-        color: red;
+      :host {
+        background-color: var(--background-color);
+        color: #ffcfb8;
+        font-weight: var(--nav-font-weight);
+        font-family: var(--nav-font-family);
+        position: fixed !important;
+        height: 100%;
+        overflow: auto;
+        position: fixed !important;
+        z-index: 1;
+      }
+
+      h1 {
+        font-family: var(--heading-font-family);
+        font-style: italic;
+        font-weight: var(--heading-font-weight);
+        margin: 10px 0;
+        padding: 0 32px;
+      }
+
+      nav {
+        overflow: auto;
+      }
+
+      .item {
+        border: none;
+        padding: 8px 16px 8px 32px;
+        overflow: hidden;
+        text-decoration: none;
+        color: var(--text-color);
+        cursor: pointer;
+        display: block;
+        text-align: left;
+        white-space: normal;
+        float: none;
+        outline: 0;
+        font-size: 18px;
+      }
+
+      .item:hover {
+        color: var(--highlight-color) !important;
       }
     `;
   }
 
   connectedCallback() {
-    super.connectedCallback()
-    console.log('hola')
-    fetch('https://ip2c.org/self').then(res => {
-      res.text().then(data => {
-        console.log(data);
-        const country = data.split(';').pop()
-        const filter = {
-            by: 'country',
-            searchterm: country.toLocaleLowerCase(),
-        };
-        //fetch('http://de1.api.radio-browser.info/json/stations/bycountry/France')
-        RadioBrowser.getStations(filter)
-          .then(data => {
-            console.log(`Most voted in ${country}: ${data.sort(byMostVoted()).slice(0, 5).map((station) => station.name )}`);
-            console.log(`Most popular in ${country}: ${data.sort(byMostPopular()).slice(0, 5).map((station) => station.name )}`);
-            console.log(data)
-          })
-            .catch(err => console.error(err));
-      })
-    })
+    super.connectedCallback();
   }
+
+  // createRenderRoot() {
+  //   return this;
+  // }
 
   render() {
     return html`
-      <h1 class="greeting">Hello New World!</h1>
+      <h1>RadioPi</h1>
+      <nav class="w3-sidebar w3-bar-block">
+        <a href="#" class="item w3-bar-item w3-button">Link 1</a>
+        <a href="#" class="item w3-bar-item w3-button">Link 2</a>
+        <a href="#" class="item w3-bar-item w3-button">Link 3</a>
+        <a href="#" class="item w3-bar-item w3-button">Link 4</a>
+        <a href="#" class="item w3-bar-item w3-button">Link 5</a>
+      </nav>
     `;
   }
 }
 
-customElements.define("radio-sidebar", RadioSidebar);
-
-function byMostVoted() {
-  return sortBy('votes')
-}
-
-function byMostPopular(prop) {
-  return sortBy('clicktrend')
-}
-
-function sortBy(prop) {
-  return function (a, b) {
-    return a[prop] > b[prop] ? 1 : b[prop] > a [prop] ? -1 : 0;
-  };
-}
+customElements.define("nav-sidebar", RadioSidebar);

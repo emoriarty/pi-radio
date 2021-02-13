@@ -10,8 +10,15 @@
 
     <title>RadioPi Web</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="stylesheet" href="./styles/custom-tags.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/theme.css" />
     <script type="module" src="./scripts/radio-browser-components.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
     <script>
       function attachListeners() {
         console.log("attaching listeners");
@@ -26,12 +33,10 @@
   </head>
 
   <body onload="attachListeners()">
-    <div class="w3-sidebar w3-bar-block" style="width: 25%">
-      <radio-sidebar />
-    </div>
-    <div style="margin-left: 25%">
+    <nav-sidebar></nav-sidebar>
+    <main>
       <popular-stations-horizontal-list></popular-stations-horizontal-list>
       <highest-rated-stations-horizontal-list></highest-rated-stations-horizontal-list>
-    </div>
+    </main>
   </body>
 </html>

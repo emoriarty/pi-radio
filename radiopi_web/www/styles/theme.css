@@ -1,0 +1,35 @@
+:root {
+  --font-size: 15px;
+  --font-family-primary: "Segoe UI", Verdana, sans-serif;
+  --font-family-secondary: "Source Sans Pro", Arial, sans-serif;
+  --font-family-ternary: "Anton", Verdana, sans-serif;
+  --font-weight: 400;
+  --font-weight-bold: 600;
+  --font-weight-bolder: 700;
+  --color-primary: #0f2527;
+  --color-secondary: #ffcfb8;
+  --color-ternary: #fff;
+}
+
+popular-stations-horizontal-list,
+highest-rated-stations-horizontal-list,
+station-card,
+nav-sidebar {
+  --heading-font-weight: var(--font-weight-bolder);
+  --heading-font-family: var(--font-family-secondary);
+  --nav-font-weight: var(--font-weight-bold);
+  --nav-font-family: var(--font-family-secondary);
+  --body-font-size: var(--font-size);
+  --body-font-weight: var(--font-weight);
+}
+
+popular-stations-horizontal-list,
+highest-rated-stations-horizontal-list {
+  --text-color: var(--color-primary);
+}
+
+nav-sidebar {
+  --background-color: var(--color-primary);
+  --text-color: var(--color-ternary);
+  --hightlight-color: var(--color-secondary);
+}

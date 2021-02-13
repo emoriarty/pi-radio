@@ -15,16 +15,17 @@ export class AbstractStationsHorizontalList extends LitElement {
   static get styles() {
     return css`
       :host {
-        display: block;
         font-weight: 400;
+        color: var(--text-color);
       }
 
       h2 {
         margin: 10px 0;
-        padding: 0 16px;
+        padding: 0 32px;
         font-size: 30px;
-        font-weight: var(--font-size);
-        font-family: var(--font-family);
+        font-weight: var(--heading-font-weight);
+        font-family: var(--heading-font-family);
+        text-transform: uppercase;
       }
 
       station-card {
@@ -32,11 +33,11 @@ export class AbstractStationsHorizontalList extends LitElement {
       }
 
       station-card:first-child {
-        padding-left: 16px;
+        padding-left: 32px;
       }
 
       station-card:last-child {
-        padding-right: 16px;
+        padding-right: 32px;
       }
     `;
   }
