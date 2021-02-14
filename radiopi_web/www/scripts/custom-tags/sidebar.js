@@ -4,10 +4,10 @@ export class RadioSidebar extends LitElement {
   static get styles() {
     return css`
       :host {
-        background-color: var(--background-color);
+        background-color: var(--color-primary);
         color: #ffcfb8;
-        font-weight: var(--nav-font-weight);
-        font-family: var(--nav-font-family);
+        font-weight: var(--font-weight-bold);
+        font-family: var(--font-family-secondary);
         position: fixed !important;
         height: 100%;
         overflow: auto;
@@ -18,7 +18,7 @@ export class RadioSidebar extends LitElement {
       h1 {
         font-family: var(--heading-font-family);
         font-style: italic;
-        font-weight: var(--heading-font-weight);
+        font-weight: var(--font-weight-bolder);
         margin: 10px 0;
         padding: 0 32px;
       }
@@ -32,7 +32,7 @@ export class RadioSidebar extends LitElement {
         padding: 8px 16px 8px 32px;
         overflow: hidden;
         text-decoration: none;
-        color: var(--text-color);
+        color: var(--color-ternary);
         cursor: pointer;
         display: block;
         text-align: left;
@@ -43,7 +43,7 @@ export class RadioSidebar extends LitElement {
       }
 
       .item:hover {
-        color: var(--highlight-color) !important;
+        color: var(--color-secondary) !important;
       }
     `;
   }
@@ -52,19 +52,52 @@ export class RadioSidebar extends LitElement {
     super.connectedCallback();
   }
 
-  // createRenderRoot() {
-  //   return this;
-  // }
+  handleClick(ev) {
+    ev.preventDefault();
+    ev.stopPropagation();
+    let event = new CustomEvent("station-nav", {
+      detail: {
+        view: ev.target.id,
+      },
+      bubbles: true,
+      composed: true,
+    });
+    ev.target.dispatchEvent(event);
+  }
 
   render() {
     return html`
       <h1>RadioPi</h1>
       <nav class="w3-sidebar w3-bar-block">
-        <a href="#" class="item w3-bar-item w3-button">Link 1</a>
-        <a href="#" class="item w3-bar-item w3-button">Link 2</a>
-        <a href="#" class="item w3-bar-item w3-button">Link 3</a>
-        <a href="#" class="item w3-bar-item w3-button">Link 4</a>
-        <a href="#" class="item w3-bar-item w3-button">Link 5</a>
+        <a
+          href="#"
+          id="home"
+          class="item w3-bar-item w3-button"
+          @click=${this.handleClick}
+          >Home</a
+        >
+        <hr />
+        <a
+          href="#"
+          id="radio-tags"
+          class="item w3-bar-item w3-button"
+          @click=${this.handleClick}
+          >Tags</a
+        >
+        <a
+          href="#"
+          id="radio-countries"
+          class="item w3-bar-item w3-button"
+          @click=${this.handleClick}
+          >Countries</a
+        >
+        <a
+          href="#"
+          id="radio-languages"
+          class="item w3-bar-item w3-button"
+          @click=${this.handleClick}
+          >Languages</a
+        >
       </nav>
     `;
   }

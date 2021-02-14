@@ -16,15 +16,15 @@ export class AbstractStationsHorizontalList extends LitElement {
     return css`
       :host {
         font-weight: 400;
-        color: var(--text-color);
+        color: var(--color-primary);
       }
 
       h2 {
         margin: 10px 0;
         padding: 0 32px;
         font-size: 30px;
-        font-weight: var(--heading-font-weight);
-        font-family: var(--heading-font-family);
+        font-weight: var(--font-weight-bolder);
+        font-family: var(--font-family-secondary);
         text-transform: uppercase;
       }
 

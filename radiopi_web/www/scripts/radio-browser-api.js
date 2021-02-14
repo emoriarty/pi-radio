@@ -1,5 +1,10 @@
 import RadioBrowser from "https://jspm.dev/radio-browser";
 
+const CACHE = {
+  country: null,
+  countryCode: null,
+};
+
 export function fetchPopularStationsByCountry(country, count = 10) {
   return fetchStationsByCountry(country)
     .then((data) => {
@@ -32,16 +37,35 @@ export function fetchStationsByCountry(country) {
 }
 
 export function fetchCountryFromCurrentLocation() {
-  return fetch("https://ip2c.org/self").then((res) => {
-    return res.text().then((data) => {
-      const countryNames = data.split(";");
-      const country = countryNames.pop();
-      const countryCode = countryNames[1];
-      return {
-        country,
-        countryCode,
-      };
-    });
+  return CACHE.country
+    ? Promise.resolve({
+        country: CACHE.country,
+        countryCode: CACHE.countryCode,
+      })
+    : fetch("https://ip2c.org/self").then((res) => {
+        return res.text().then((data) => {
+          const countryNames = data.split(";");
+          const country = countryNames.pop();
+          const countryCode = countryNames[1];
+          console.log("CACHE.country empty");
+          CACHE.country = country;
+          CACHE.countryCode = countryCode;
+          return {
+            country,
+            countryCode,
+          };
+        });
+      });
+}
+
+export function fetchTags() {
+  const filter = {
+    hidebroken: true,
+  };
+
+  return RadioBrowser.getTags(filter).then((data) => {
+    console.log(data);
+    return data;
   });
 }
 

@@ -20,7 +20,7 @@ export class StationCard extends LitElement {
       h4 {
         margin-top: 0;
         margin-bottom: 0.5rem;
-        font-weight: var(--heading-font-weight);
+        font-weight: var(--font-weight-bolder);
         font-family: var(--heading-font-family);
       }
 

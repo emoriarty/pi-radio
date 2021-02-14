@@ -12,31 +12,19 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="stylesheet" href="./styles/index.css" />
     <link rel="stylesheet" href="./styles/theme.css" />
-    <script type="module" src="./scripts/radio-browser-components.js"></script>
-    <script type="module" src="./scripts/index.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap"
       rel="stylesheet"
     />
-    <script>
-      function attachListeners() {
-        console.log("attaching listeners");
-        document.querySelectorAll("station-card").forEach((item) => {
-          console.log(item);
-          item.addEventListener("on-play", (ev) => {
-            console.log(ev);
-          });
-        });
-      }
-    </script>
+    <script type="module" src="./scripts/radio-browser-components.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
   </head>
 
-  <body onload="attachListeners()">
+  <body>
     <nav-sidebar></nav-sidebar>
     <main>
-      <popular-stations-horizontal-list></popular-stations-horizontal-list>
-      <highest-rated-stations-horizontal-list></highest-rated-stations-horizontal-list>
+      <index-view view="home"></index-view>
     </main>
   </body>
 </html>
