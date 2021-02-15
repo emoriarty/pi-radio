@@ -1,9 +1,9 @@
 import { LitElement, html, css } from "https://jspm.dev/lit-element@2";
 
-export class RadioTagView extends LitElement {
+export class RadioLanguageView extends LitElement {
   static get properties() {
     return {
-      tag: { type: String },
+      language: { type: String },
     };
   }
 
@@ -29,8 +29,8 @@ export class RadioTagView extends LitElement {
   // }
 
   render() {
-    return html` <h2>Radio Tags &gt; ${this.tag}</h2> `;
+    return html` <h2>Radio Countries &gt; ${this.language}</h2> `;
   }
 }
 
-customElements.define("radio-tag-view", RadioTagView);
+customElements.define("radio-language-view", RadioLanguageView);

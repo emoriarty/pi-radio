@@ -1,9 +1,9 @@
 import { LitElement, html, css } from "https://jspm.dev/lit-element@2";
 
-export class RadioTagView extends LitElement {
+export class TreeView extends LitElement {
   static get properties() {
     return {
-      tag: { type: String },
+      title: { type: String },
     };
   }
 
@@ -24,13 +24,12 @@ export class RadioTagView extends LitElement {
     `;
   }
 
-  // createRenderRoot() {
-  //   return this;
-  // }
-
   render() {
-    return html` <h2>Radio Tags &gt; ${this.tag}</h2> `;
+    return html`
+      <h2>${this.title}</h2>
+      <slot></slot>
+    `;
   }
 }
 
-customElements.define("radio-tag-view", RadioTagView);
+customElements.define("tree-view", TreeView);

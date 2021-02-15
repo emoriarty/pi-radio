@@ -12,6 +12,10 @@ import { RadioCountriesView } from "./custom-tags/views/radio-countries-view.js"
 import { RadioLanguagesView } from "./custom-tags/views/radio-languages-view.js";
 import { RadioTagsView } from "./custom-tags/views/radio-tags-view.js";
 import { RadioTagView } from "./custom-tags/views/radio-tag-view.js";
+import { TreeList } from "./custom-tags/lists/tree-list.js";
+import { TreeView } from "./custom-tags/views/tree-view.js";
+import { RadioLanguageView } from "./custom-tags/views/radio-language-view.js";
+import { RadioCountryView } from "./custom-tags/views/radio-country-view.js";
 
 const RadioBrowserComponents = {
   RadioSidebar,
@@ -28,5 +32,9 @@ const RadioBrowserComponents = {
   RadioLanguagesView,
   PlayIcon,
   StopIcon,
+  TreeList,
+  TreeView,
+  RadioLanguageView,
+  RadioCountryView,
 };
 export { RadioBrowserComponents };

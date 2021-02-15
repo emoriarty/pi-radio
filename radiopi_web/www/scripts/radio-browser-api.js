@@ -69,6 +69,28 @@ export function fetchTags() {
   });
 }
 
+export function fetchCountries() {
+  const filter = {
+    hidebroken: true,
+  };
+
+  return RadioBrowser.getCountries(filter).then((data) => {
+    console.log(data);
+    return data;
+  });
+}
+
+export function fetchLanguages() {
+  const filter = {
+    hidebroken: true,
+  };
+
+  return RadioBrowser.getLanguages(filter).then((data) => {
+    console.log(data);
+    return data;
+  });
+}
+
 // Filters
 function byHighestRated() {
   return sortBy("votes", false);

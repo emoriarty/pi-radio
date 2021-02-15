@@ -13,12 +13,16 @@ export class IndexView extends LitElement {
     switch (this.view) {
       case "radio-languages":
         return this.renderRadioLanguages();
+      case "radio-language":
+        return this.renderRadioLanguage();
       case "radio-tags":
         return this.renderRadioTags();
       case "radio-tag":
         return this.renderRadioTag();
       case "radio-countries":
         return this.renderRadioCountries();
+      case "radio-country":
+        return this.renderRadioCountry();
       case "home":
       default:
         return this.renderHome();
@@ -43,6 +47,18 @@ export class IndexView extends LitElement {
 
   renderRadioTag() {
     return html`<radio-tag-view tag="${this.args.tag}"></radio-tag-view>`;
+  }
+
+  renderRadioCountry() {
+    return html`<radio-country-view
+      country="${this.args.tag}"
+    ></radio-country-view>`;
+  }
+
+  renderRadioLanguage() {
+    return html`<radio-language-view
+      language="${this.args.tag}"
+    ></radio-language-view>`;
   }
 }
 
