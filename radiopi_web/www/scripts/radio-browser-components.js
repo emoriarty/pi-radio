@@ -16,6 +16,8 @@ import { TreeList } from "./custom-tags/lists/tree-list.js";
 import { TreeView } from "./custom-tags/views/tree-view.js";
 import { RadioLanguageView } from "./custom-tags/views/radio-language-view.js";
 import { RadioCountryView } from "./custom-tags/views/radio-country-view.js";
+import { GridlList } from "./custom-tags/lists/grid-list.js";
+import { StationsGridlList } from "./custom-tags/lists/stations-grid-list.js";
 
 const RadioBrowserComponents = {
   RadioSidebar,
@@ -36,5 +38,7 @@ const RadioBrowserComponents = {
   TreeView,
   RadioLanguageView,
   RadioCountryView,
+  GridlList,
+  StationsGridlList,
 };
 export { RadioBrowserComponents };
