@@ -29,7 +29,7 @@ export class AbstractStationsHorizontalList extends LitElement {
       }
 
       station-card {
-        width: 16.6667%;
+        width: 33.3333%;
       }
 
       station-card:first-child {
@@ -38,6 +38,12 @@ export class AbstractStationsHorizontalList extends LitElement {
 
       station-card:last-child {
         padding-right: 32px;
+      }
+
+      @media only screen and (min-width: 768px) {
+        station-card {
+          width: 16.6667%;
+        }
       }
     `;
   }

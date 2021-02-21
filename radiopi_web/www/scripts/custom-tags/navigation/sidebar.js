@@ -4,6 +4,7 @@ export class RadioSidebar extends LitElement {
   static get styles() {
     return css`
       :host {
+        display: none;
         background-color: var(--color-primary);
         color: #ffcfb8;
         font-weight: var(--font-weight-bold);
@@ -21,6 +22,7 @@ export class RadioSidebar extends LitElement {
         font-weight: var(--font-weight-bolder);
         margin: 10px 0;
         padding: 0 32px;
+        display: none;
       }
 
       nav {
@@ -40,10 +42,37 @@ export class RadioSidebar extends LitElement {
         float: none;
         outline: 0;
         font-size: 18px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-color: inherit;
+        font-family: var(--font-family-secondary);
       }
 
       .item:hover {
         color: var(--color-secondary) !important;
+      }
+
+      .close {
+        display: block;
+      }
+
+      .close b {
+        float: right;
+      }
+
+      @media only screen and (min-width: 768px) {
+        :host,
+        h1 {
+          display: block;
+        }
+
+        .close {
+          display: none;
+        }
       }
     `;
   }
@@ -65,17 +94,24 @@ export class RadioSidebar extends LitElement {
     ev.target.dispatchEvent(event);
   }
 
+  handleClose(ev) {
+    ev.preventDefault();
+    ev.stopPropagation();
+    let event = new CustomEvent("click-close", {
+      bubbles: true,
+      composed: true,
+    });
+    ev.target.dispatchEvent(event);
+  }
+
   render() {
     return html`
       <h1>RadioPi</h1>
       <nav class="w3-sidebar w3-bar-block">
-        <a
-          href="#"
-          id="home"
-          class="item w3-bar-item w3-button"
-          @click=${this.handleClick}
-          >Home</a
+        <a href="#" @click="${this.handleClose}" class="close item"
+          >Close <b>&times;</b></a
         >
+        <a href="#" id="home" class="item" @click=${this.handleClick}>Home</a>
         <hr />
         <a
           href="#"
