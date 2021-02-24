@@ -1,8 +1,8 @@
-let sidebar;
+import Navigo from "https://jspm.dev/navigo";
+
+const router = new Navigo("/", { hash: true });
 
 function attachListeners() {
-  const indexView = document.querySelector("index-view");
-
   console.log("attaching listeners");
 
   document.querySelectorAll("station-card").forEach((item) => {
@@ -13,8 +13,10 @@ function attachListeners() {
   });
 
   document.body.addEventListener("station-nav", (ev) => {
-    indexView.setAttribute("view", ev.detail.view);
-    ev.detail.args && indexView.setAttribute("args", ev.detail.args);
+    console.log(ev.detail);
+    ev.detail.args
+      ? router.navigate(`${ev.detail.view}/${ev.detail.args.id}`)
+      : router.navigate(ev.detail.view);
     toggleSidebar();
   });
 
@@ -27,7 +29,32 @@ function attachListeners() {
     .addEventListener("click-close", toggleSidebar);
 }
 
-function initNav() {}
+function initNav() {
+  router
+    .on("/radio-languages", navigate)
+    .on("/radio-language/:id", navigate)
+    .on("/radio-tags", navigate)
+    .on("/radio-tag/:id", navigate)
+    .on("/radio-countries", navigate)
+    .on("/radio-country/:id", navigate)
+    .on("/", navigate);
+}
+
+function onloadNav() {
+  const hash = document.location.hash.slice(2);
+  router.navigate(hash);
+}
+
+function navigate(ev) {
+  console.log(ev, ev.route.name.slice(0, ev.route.name.indexOf("/")));
+  let indexView = document.querySelector("index-view");
+  let sliceIndex = ev.route.name.indexOf("/");
+  indexView.setAttribute(
+    "view",
+    ev.route.name.slice(0, sliceIndex > 0 ? sliceIndex : undefined)
+  );
+  ev.data && indexView.setAttribute("args", JSON.stringify(ev.data));
+}
 
 function toggleSidebar() {
   let sidebar = document.querySelector("nav-sidebar");
@@ -38,5 +65,6 @@ function toggleSidebar() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initNav();
+  onloadNav();
   attachListeners();
 });

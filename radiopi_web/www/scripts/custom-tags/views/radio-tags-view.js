@@ -41,7 +41,7 @@ export class RadioTagsView extends LitElement {
     let event = new CustomEvent("station-nav", {
       detail: {
         view: "radio-tag",
-        args: JSON.stringify({ tag: ev.detail.id }),
+        args: { id: ev.detail.id },
       },
       bubbles: true,
       composed: true,

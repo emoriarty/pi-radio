@@ -41,7 +41,7 @@ export class RadioLanguagesView extends LitElement {
     let event = new CustomEvent("station-nav", {
       detail: {
         view: "radio-language",
-        args: JSON.stringify({ tag: ev.detail.id }),
+        args: { id: ev.detail.id },
       },
       bubbles: true,
       composed: true,

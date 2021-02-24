@@ -111,7 +111,7 @@ export class RadioSidebar extends LitElement {
         <a href="#" @click="${this.handleClose}" class="close item"
           >Close <b>&times;</b></a
         >
-        <a href="#" id="home" class="item" @click=${this.handleClick}>Home</a>
+        <a href="#" class="item" @click=${this.handleClick}>Home</a>
         <hr />
         <a
           href="#"

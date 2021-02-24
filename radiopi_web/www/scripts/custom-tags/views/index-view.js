@@ -46,18 +46,18 @@ export class IndexView extends LitElement {
   }
 
   renderRadioTag() {
-    return html`<radio-tag-view tag="${this.args.tag}"></radio-tag-view>`;
+    return html`<radio-tag-view tag="${this.args.id}"></radio-tag-view>`;
   }
 
   renderRadioCountry() {
     return html`<radio-country-view
-      country="${this.args.tag}"
+      country="${this.args.id}"
     ></radio-country-view>`;
   }
 
   renderRadioLanguage() {
     return html`<radio-language-view
-      language="${this.args.tag}"
+      language="${this.args.id}"
     ></radio-language-view>`;
   }
 }
