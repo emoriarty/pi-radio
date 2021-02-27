@@ -1,6 +1,11 @@
+body {
+  font-family: var(--font-family-secondary);
+}
+
 main {
   margin-left: 0;
   overflow: auto;
+  padding-top: 49px;
 }
 
 nav-sidebar {
@@ -10,6 +15,7 @@ nav-sidebar {
 @media only screen and (min-width: 768px) {
   main {
     margin-left: 200px;
+    padding-top: 0;
   }
 }
 

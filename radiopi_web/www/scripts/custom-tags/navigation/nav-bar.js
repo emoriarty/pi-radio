@@ -44,7 +44,8 @@ export class NavBar extends LitElement {
         display: block;
         outline: 0;
         white-space: normal;
-        font-size: 24px;
+        font-size: var(--font-size-3);
+        line-height: 2.125rem;
       }
 
       .bar-item:hover {
@@ -52,7 +53,6 @@ export class NavBar extends LitElement {
       }
 
       .home {
-        font-family: var(--heading-font-family);
         font-weight: var(--font-weight-bolder);
       }
 

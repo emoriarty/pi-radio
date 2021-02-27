@@ -4,11 +4,8 @@ export class PageTitle extends LitElement {
   static get styles() {
     return css`
       h2 {
-        font-family: var(--font-family-secondary);
-        font-size: 32px;
-        font-weight: var(--font-weight-bolder);
-        margin: 10px 0 32px;
-        padding: 0 32px;
+        font-size: var(--font-size-2);
+        margin: var(--spacing-large) 0;
         text-transform: uppercase;
       }
     `;

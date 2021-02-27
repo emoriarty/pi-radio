@@ -5,10 +5,8 @@ export class HeadingPrimary extends LitElement {
     return css`
       h3 {
         margin: 10px 0;
-        padding: 0 32px;
-        font-size: 26px;
-        font-weight: var(--font-weight-bolder);
-        font-family: var(--font-family-secondary);
+        padding: 0 var(--spacing-large);
+        font-size: var(--font-size-3);
         text-transform: uppercase;
       }
     `;

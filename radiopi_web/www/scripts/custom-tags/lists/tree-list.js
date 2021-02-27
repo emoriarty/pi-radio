@@ -14,7 +14,7 @@ export class TreeList extends LitElement {
   static get styles() {
     return css`
       :host {
-        padding: 0 32px;
+        padding: 0 var(--spacing-large);
         display: block;
       }
 
@@ -25,7 +25,7 @@ export class TreeList extends LitElement {
       }
 
       li a {
-        padding: 8px 16px 8px 32px;
+        padding: 8px 16px 8px var(--spacing-large);
         display: inline-block;
         width: 100%;
         text-decoration: none;
@@ -49,7 +49,7 @@ export class TreeList extends LitElement {
       }
 
       button {
-        font-size: 20px;
+        font-size: var(--font-size-4);
         border: 0;
         padding: 8px 16px;
         vertical-align: middle;
@@ -74,7 +74,7 @@ export class TreeList extends LitElement {
       }
 
       button i {
-        font-size: 0.8rem;
+        font-size: var(--font-size-6);
       }
     `;
   }

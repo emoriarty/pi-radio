@@ -21,7 +21,6 @@ export class StationCard extends LitElement {
         margin-top: 0;
         margin-bottom: 0.5rem;
         font-weight: var(--font-weight-bolder);
-        font-family: var(--heading-font-family);
       }
 
       header {

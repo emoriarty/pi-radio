@@ -24,11 +24,11 @@ export class AbstractStationsHorizontalList extends LitElement {
       }
 
       station-card:first-child {
-        padding-left: 32px;
+        padding-left: var(--spacing-large);
       }
 
       station-card:last-child {
-        padding-right: 32px;
+        padding-right: var(--spacing-large);
       }
 
       @media only screen and (min-width: 768px) {

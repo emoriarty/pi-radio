@@ -12,7 +12,7 @@ export class RadioCountryView extends LitElement {
   static get styles() {
     return css`
       :host {
-        padding: 0 32px;
+        padding: 0 var(--spacing-large);
         display: block;
       }
     `;

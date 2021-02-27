@@ -8,7 +8,6 @@ export class RadioSidebar extends LitElement {
         background-color: var(--color-primary);
         color: #ffcfb8;
         font-weight: var(--font-weight-bold);
-        font-family: var(--font-family-secondary);
         position: fixed !important;
         height: 100%;
         overflow: auto;
@@ -17,11 +16,10 @@ export class RadioSidebar extends LitElement {
       }
 
       h1 {
-        font-family: var(--heading-font-family);
+        font-size: var(--font-size-2);
         font-style: italic;
-        font-weight: var(--font-weight-bolder);
-        margin: 32px 0;
-        padding: 0 32px;
+        margin: var(--spacing-large) 0;
+        padding: 0 var(--spacing-large);
         display: none;
       }
 
@@ -31,7 +29,7 @@ export class RadioSidebar extends LitElement {
 
       .item {
         border: none;
-        padding: 8px 16px 8px 32px;
+        padding: 8px 16px 8px var(--spacing-large);
         overflow: hidden;
         text-decoration: none;
         color: var(--color-ternary);
@@ -41,7 +39,7 @@ export class RadioSidebar extends LitElement {
         white-space: normal;
         float: none;
         outline: 0;
-        font-size: 18px;
+        font-size: var(--font-size-4);
         -webkit-touch-callout: none;
         -webkit-user-select: none;
         -khtml-user-select: none;
@@ -49,7 +47,6 @@ export class RadioSidebar extends LitElement {
         -ms-user-select: none;
         user-select: none;
         background-color: inherit;
-        font-family: var(--font-family-secondary);
       }
 
       .item:hover {
