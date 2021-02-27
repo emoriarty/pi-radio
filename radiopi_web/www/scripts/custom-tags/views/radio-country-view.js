@@ -15,14 +15,6 @@ export class RadioCountryView extends LitElement {
         padding: 0 32px;
         display: block;
       }
-
-      h2 {
-        margin: 10px 0;
-        font-family: var(--font-family-secondary);
-        font-weight: var(--font-weight-bolder);
-        font-size: 30px;
-        text-transform: uppercase;
-      }
     `;
   }
 
@@ -45,7 +37,7 @@ export class RadioCountryView extends LitElement {
   render() {
     console.log(this.country);
     return html`
-      <h2>Radio Countries &gt; ${this.country}</h2>
+      <page-title>Radio Countries &gt; ${this.country}</page-title>
       <stations-grid-list>
         ${this.stations.map(this.renderStation)}
       </stations-grid-list>

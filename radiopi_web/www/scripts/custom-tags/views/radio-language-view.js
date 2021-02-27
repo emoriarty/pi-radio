@@ -13,14 +13,6 @@ export class RadioLanguageView extends LitElement {
         padding: 0 32px;
         display: block;
       }
-
-      h2 {
-        margin: 10px 0;
-        font-family: var(--font-family-secondary);
-        font-weight: var(--font-weight-bolder);
-        font-size: 30px;
-        text-transform: uppercase;
-      }
     `;
   }
 
@@ -29,7 +21,7 @@ export class RadioLanguageView extends LitElement {
   // }
 
   render() {
-    return html` <h2>Radio Countries &gt; ${this.language}</h2> `;
+    return html` <page-title>Radio Countries &gt; ${this.language}</page-title> `;
   }
 }
 

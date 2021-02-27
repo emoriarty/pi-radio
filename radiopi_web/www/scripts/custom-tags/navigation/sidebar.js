@@ -20,7 +20,7 @@ export class RadioSidebar extends LitElement {
         font-family: var(--heading-font-family);
         font-style: italic;
         font-weight: var(--font-weight-bolder);
-        margin: 10px 0;
+        margin: 32px 0;
         padding: 0 32px;
         display: none;
       }
@@ -112,7 +112,6 @@ export class RadioSidebar extends LitElement {
           >Close <b>&times;</b></a
         >
         <a href="#" class="item" @click=${this.handleClick}>Home</a>
-        <hr />
         <a
           href="#"
           id="radio-tags"

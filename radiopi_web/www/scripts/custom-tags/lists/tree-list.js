@@ -18,14 +18,6 @@ export class TreeList extends LitElement {
         display: block;
       }
 
-      h2 {
-        margin: 10px 0;
-        font-family: var(--font-family-secondary);
-        font-weight: var(--font-weight-bolder);
-        font-size: 30px;
-        text-transform: uppercase;
-      }
-
       ul {
         list-style-type: none;
         padding: 0;

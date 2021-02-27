@@ -19,6 +19,8 @@ import { RadioLanguageView } from "./custom-tags/views/radio-language-view.js";
 import { RadioCountryView } from "./custom-tags/views/radio-country-view.js";
 import { GridlList } from "./custom-tags/lists/grid-list.js";
 import { StationsGridlList } from "./custom-tags/lists/stations-grid-list.js";
+import { HeadingPrimary } from "./custom-tags/typos/heading-primary.js";
+import { PageTitle } from "./custom-tags/typos/page-title.js";
 
 const RadioBrowserComponents = {
   RadioSidebar,
@@ -42,5 +44,7 @@ const RadioBrowserComponents = {
   GridlList,
   StationsGridlList,
   NavBar,
+  PageTitle,
+  HeadingPrimary,
 };
 export { RadioBrowserComponents };

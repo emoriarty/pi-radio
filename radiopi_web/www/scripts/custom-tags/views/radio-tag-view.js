@@ -13,14 +13,6 @@ export class RadioTagView extends LitElement {
         padding: 0 32px;
         display: block;
       }
-
-      h2 {
-        margin: 10px 0;
-        font-family: var(--font-family-secondary);
-        font-weight: var(--font-weight-bolder);
-        font-size: 30px;
-        text-transform: uppercase;
-      }
     `;
   }
 
@@ -29,7 +21,7 @@ export class RadioTagView extends LitElement {
   // }
 
   render() {
-    return html` <h2>Radio Tags &gt; ${this.tag}</h2> `;
+    return html` <page-title>Radio Tags &gt; ${this.tag}</page-title> `;
   }
 }
 
