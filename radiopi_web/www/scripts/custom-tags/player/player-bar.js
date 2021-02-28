@@ -11,7 +11,8 @@ export class PlayerBar extends LitElement {
         width: 100%;
         z-index: 1;
         bottom: 0;
-        border-top: 1px solid gray;
+        border-top: 1px solid lightgray;
+        box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
       }
 
       .bar-left {
@@ -45,8 +46,67 @@ export class PlayerBar extends LitElement {
         width: 40px;
       }
 
-      @media only screen and (min-width: 768px) {
+      .playback-time {
+        display: none;
+        position: relative;
+        background-color: lightgray;
+        width: 80%;
+        margin: 0 auto;
       }
+
+      .playback-cursor {
+        height: 8px;
+        width: 8px;
+        position: absolute;
+        border-radius: 50%;
+        top: -3px;
+        background-color: var(--color-primary);
+      }
+
+      .playback-progress {
+        background-color: var(--color-primary);
+      }
+
+      @media only screen and (min-width: 768px) {
+        .bar-left {
+          flex: 1;
+        }
+
+        .bar-right {
+          flex: 3;
+          display: flex;
+          flex-direction: column;
+          padding: var(--spacing-medium) var(--spacing-large);
+        }
+
+        .artwork {
+          padding: var(--spacing-medium);
+        }
+
+        .artwork img {
+          width: 67px;
+        }
+
+        play-icon {
+          right: auto;
+          width: 48px;
+        }
+
+        .playback-time {
+          display: block;
+        }
+
+        .playback-controls {
+          height: 48px;
+          margin: 0 0 var(--spacing-medium) 0;
+          text-align: center;
+        }
+      }
+
+      @media only screen and (min-width: 1200px) {
+        .bar-left {
+          flex: 0 0 20%;
+        }
     `;
   }
 
@@ -71,7 +131,13 @@ export class PlayerBar extends LitElement {
         <div class="titles">NRJ Extravadance</div>
       </div>
       <div class="bar-right">
-        <play-icon></play-icon>
+        <div class="playback-controls">
+          <play-icon></play-icon>
+        </div>
+        <div class="playback-time">
+          <div class="playback-progress" style="height:2px;width:0%"></div>
+          <div class="playback-cursor"></div>
+        </div>
       </div>
     `;
   }
