@@ -21,6 +21,7 @@ import { GridlList } from "./custom-tags/lists/grid-list.js";
 import { StationsGridlList } from "./custom-tags/lists/stations-grid-list.js";
 import { HeadingPrimary } from "./custom-tags/typos/heading-primary.js";
 import { PageTitle } from "./custom-tags/typos/page-title.js";
+import { PlayerBar } from "./custom-tags/player/player-bar.js";
 
 const RadioBrowserComponents = {
   RadioSidebar,
@@ -46,5 +47,6 @@ const RadioBrowserComponents = {
   NavBar,
   PageTitle,
   HeadingPrimary,
+  PlayerBar,
 };
 export { RadioBrowserComponents };
